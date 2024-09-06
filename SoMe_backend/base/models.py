@@ -48,8 +48,6 @@ class ExtendedUser(User):
     # Billeder bliver gemt i "media" folderen, men her bestemmer jeg at den skal bruge "media/user_images"
     image = models.ImageField(null=True, blank=True, upload_to="user_images")
 
-
-
 # Friendships følger lige nu formularen: 
 # F = N * (N - 1)
 # For at være mere optimal burde man bruge denne:
@@ -59,3 +57,18 @@ class Friendship(models.Model):
     A = models.ForeignKey("base.ExtendedUser", on_delete=models.CASCADE, related_name="A_friendships")
     B = models.ForeignKey("base.ExtendedUser", on_delete=models.CASCADE, related_name="B_friendships")
     
+
+class Post(models.Model):
+    text = models.TextField(max_length=1024, null=False, blank=False)
+    author = models.ForeignKey("base.ExtendedUser", on_delete=models.CASCADE, related_name="posts")
+    created_date = models.DateTimeField(auto_now_add=True)
+    edited_date = models.DateTimeField(auto_now=True)
+    public = models.BooleanField(default=False)
+
+
+class Comment(models.Model):
+    post = models.ForeignKey("base.Post", on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey("base.ExtendedUser", on_delete=models.SET_NULL, null=True, related_name="comments")
+    text = models.TextField(max_length=512, null=False, blank=False)
+    created_date = models.DateTimeField(auto_now_add=True)
+    edited_date = models.DateTimeField(auto_now=True)
