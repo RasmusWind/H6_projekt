@@ -1,11 +1,19 @@
 from . import models
-from rest_framework.serializers import ModelSerializer, IntegerField
-
+from rest_framework.serializers import ModelSerializer, IntegerField, SerializerMethodField
+from django.contrib.auth.models import User
 
 class UserSerializer(ModelSerializer):
+    has_pending_friend_request = SerializerMethodField()
+
+    def get_has_pending_friend_request(self, obj):
+        try:
+            return obj.has_pending_friend_request
+        except:
+            return None
+
     class Meta:
-        model = models.ExtendedUser
-        fields = ('first_name', 'last_name', 'is_staff')
+        model = User
+        fields = ('username', 'password', 'first_name', 'last_name', 'is_staff', 'has_pending_friend_request')
 
 
 class PostSerializer(ModelSerializer):

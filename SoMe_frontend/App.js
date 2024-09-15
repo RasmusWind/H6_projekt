@@ -1,11 +1,10 @@
-import { useDataContext } from "./Context";
-import { Main } from "./components/main.js"
+import { ContextProvider } from "./Context";
+import Main from "./components/Main";
 
 export default function App() {
   return (
-    <useDataContext>
-      <Main/>
-    </useDataContext>
+    <ContextProvider>
+      <Main />
+    </ContextProvider>
   );
 }
-

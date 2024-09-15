@@ -32,24 +32,24 @@ def goto_swagger_page(request):
     return HttpResponseRedirect("/swagger")
 
 
-class SessionAuthenticationPost(APIView):
+class SessionAuthenticationLogin(APIView):
     permission_classes = (AllowAny, )
     authentication_classes = ()
 
     def post(self, request):
         user = get_object_or_404(models.ExtendedUser, username=request.data.get("username"))
         if not user.check_password(request.data.get("password")):
-            return Response({"user":None, "token":None}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"status": "error", "message":"Invalid username or password", "user":None, "token":None}, status=status.HTTP_404_NOT_FOUND)
         user_serializer = serializers.UserSerializer(instance=user)
         user = authenticate(username=request.data.get('username'), password=request.data.get('password'))
         if not user:
             raise ValidationError('user could not be authenticated')
         login(request, user)
         token, _ = Token.objects.get_or_create(user=user)
-        return Response({"user":user_serializer.data, "token": token.key})
+        return Response({"status":"success","user":user_serializer.data, "token": token.key})
 
 
-class SessionAuthenticationGet(APIView):
+class SessionAuthenticationGetUser(APIView):
     permission_classes = (IsAuthenticated, )
     authentication_classes = (SessionAuthentication, )
 
@@ -59,15 +59,23 @@ class SessionAuthenticationGet(APIView):
         return Response({"user":user_serializer.data, "token": token.key})
 
 
-class TokenAuthenticate(APIView):
+class TokenAuthenticationLogin(APIView):
     permission_classes = (AllowAny, )
     authentication_classes = ()
 
     def post(self, request):
         user = get_object_or_404(models.ExtendedUser, username=request.data.get("username"))
         if not user.check_password(request.data.get("password")):
-            return Response({"user":None, "token":None}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"status": "Invalid username or password", "user":None, "token":None}, status=status.HTTP_404_NOT_FOUND)
         user_serializer = serializers.UserSerializer(instance=user)
         token, _ = Token.objects.get_or_create(user=user)
-        return Response({"user":user_serializer.data, "token": token.key})
-    
+        return Response({"status": "success", "user":user_serializer.data, "token": token.key})
+
+
+class TokenAuthenticationGetUser(APIView):
+    permission_classes = (IsAuthenticated, )
+    authentication_classes = (TokenAuthentication, )
+
+    def get(self, request):
+        user_serializer = serializers.UserSerializer(instance=request.user)
+        return Response({"status":"success", "user":user_serializer.data})
