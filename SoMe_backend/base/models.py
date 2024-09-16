@@ -43,13 +43,22 @@ class ExtendedUserManager(UserManager):
         friend_request.rejected = True
         friend_request.save()
 
+    def remove_friend_request(self, from_user, to_user):
+        friend_request = FriendshipRequest.objects.filter(from_user=from_user, to_user=to_user).first()
+        if friend_request:
+            friend_request.delete()
+
 
 # Django har allerede en defineret bruger tabel, så den vælger jeg bare at udvide.
 class ExtendedUser(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     objects = ExtendedUserManager()
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     # Billeder bliver gemt i "media" folderen, men her bestemmer jeg at den skal bruge "media/user_images"
     image = models.ImageField(null=True, blank=True, upload_to="user_images")
+    
+    @property
+    def has_friend_requests(self):
+        return FriendshipRequest.objects.filter(to_user=self.user).exists()
 
 # Friendships følger lige nu formularen: 
 # F = N * (N - 1)

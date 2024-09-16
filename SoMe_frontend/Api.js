@@ -4,24 +4,10 @@ axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFToken";
 axios.defaults.withCredentials = true;
 
-// class SessionAuth {
-//   constructor(url) {
-//     this.request = axios.create({
-//       baseURL: url,
-//     });
-//   }
+const server_url = "http://192.168.1.2:8000";
 
-//   get(path) {
-//     return this.request.get(path);
-//   }
-//   post(path, data) {
-//     return this.request.post(path, data);
-//   }
-// }
-
-// const session_request = SessionAuth("http://localhost:8000");
 const sessionAuth = axios.create({
-  baseURL: "http://172.16.12.10:8000",
+  baseURL: server_url,
 });
 
-export { sessionAuth };
+export { sessionAuth, server_url };

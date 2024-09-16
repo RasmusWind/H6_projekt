@@ -9,8 +9,8 @@ import { styles } from "../assets/styles";
 export default function Login() {
   const dataContext = useDataContext();
   const [signUp, setSignUp] = useState(false);
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const [username, setUsername] = useState("rasmustest");
+  const [password, setPassword] = useState("123AsD4AsD5");
 
   // TODO, check if this is even necessary
   function handleBackButtonClick() {}
@@ -26,11 +26,10 @@ export default function Login() {
         password: password,
       })
       .then((response) => {
-        if (response.status == "success") {
-          dataContext.setUser(response.user);
-          dataContext.setToken(response.token);
+        if (response.data.status == "success") {
+          dataContext.setUser(response.data.user);
+          dataContext.setToken(response.data.token);
         }
-        console.log(response);
       })
       .catch((error) => console.log(error));
   }
@@ -40,25 +39,35 @@ export default function Login() {
   }
 
   return (
-    <View style={styles.pageStyle}>
-      <View style={styles.pageStyle}>
-        <Text style={styles.whiteText}>Username</Text>
+    <View style={styles.container}>
+      <View style={styles.appTitleContainer}>
+        <Text style={styles.appTitle}>Awesome Media</Text>
+      </View>
+      <View style={styles.appLoginContainer}>
         <TextInput
+          placeholder="Username"
+          placeholderTextColor="grey"
           onChangeText={setUsername}
           value={username}
           style={styles.input}
         ></TextInput>
-        <Text style={styles.whiteText}>Password</Text>
         <TextInput
+          placeholder="Password"
+          placeholderTextColor="grey"
           onChangeText={setPassword}
           value={password}
           secureTextEntry={true}
           style={styles.input}
         ></TextInput>
-        <Button onPress={userLogin} title="Login" color="blue" />
+        <Button
+          style={styles.loginButton}
+          onPress={userLogin}
+          title="Login"
+          color="blue"
+        />
       </View>
-      <View style={styles.footer}>
-        <Text style={{ color: "white" }}>Don't have an account?</Text>
+      <View style={styles.loginFooter}>
+        <Text style={{ color: "grey" }}>Don't have an account?</Text>
         <Button onPress={() => setSignUp(true)} title="Sign-up" color="blue" />
       </View>
     </View>

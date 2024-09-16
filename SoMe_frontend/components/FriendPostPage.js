@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { sessionAuth } from "../Api";
 import Post from "./Post";
 
-export default function PublicPostPage() {
+export default function FriendPostPage() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     sessionAuth
-      .get("/get_public_posts")
+      .get("/get_friend_posts")
       .then((response) => {
         setPosts(response.data.posts);
       })

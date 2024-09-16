@@ -14,6 +14,7 @@ export default function SignUp({ setSignUp }) {
   const [email, setEmail] = useState();
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
+  const [errorText, setErrorText] = useState();
 
   useEffect(() => {
     const handleBackButtonClick = () => {
@@ -31,28 +32,29 @@ export default function SignUp({ setSignUp }) {
   }, []);
 
   function handleSignupSubmit(event) {
+    console.log(password);
     if (password != passwordCheck) {
-      console.log("Passwords do not match");
+      setErrorText("Passwords do not match");
       return;
     }
-    if (username.Length() == 0) {
-      console.log("Username field is empty");
+    if (username.length == 0) {
+      setErrorText("Username field is empty");
       return;
     }
-    if (password.Length() == 0) {
-      console.log("Password field is empty");
+    if (password.length == 0) {
+      setErrorText("Password field is empty");
       return;
     }
-    if (firstName.Length() == 0) {
-      console.log("First name field is empty");
+    if (firstName.length == 0) {
+      setErrorText("First name field is empty");
       return;
     }
-    if (lastName.Length() == 0) {
-      console.log("Last name field is empty");
+    if (lastName.length == 0) {
+      setErrorText("Last name field is empty");
       return;
     }
-    if (email.Length() == 0) {
-      console.log("Email field is empty");
+    if (email.length == 0) {
+      setErrorText("Email field is empty");
       return;
     }
 
@@ -65,13 +67,14 @@ export default function SignUp({ setSignUp }) {
         email: email,
       })
       .then((response) => {
+        setSignUp(false);
+      })
+      .catch((error) => {
+        let response = error.response.data;
         if (response.status == "error") {
           // TODO, handle error
           // Display an error
-        }
-        if (response.status == "success") {
-          // return the user to login page where they can now login
-          setSignUp(false);
+          setErrorText(response.message);
         }
       });
   }
@@ -88,37 +91,53 @@ export default function SignUp({ setSignUp }) {
         style={styles.backarrow}
         name="arrow-left"
         size={30}
-        color="#000"
+        color="blue"
       />
+      <View style={styles.signUpTitleContainer}>
+        <Text style={styles.signUpTitle}>Sign Up</Text>
+      </View>
+      <View style={styles.signUpErrorContainer}>
+        <Text style={styles.signUpError}>{errorText}</Text>
+      </View>
       <View>
-        <Text style={styles.whiteText}>username</Text>
         <TextInput
+          placeholder="username"
+          placeholderTextColor="grey"
           style={styles.input}
           value={username}
           onChangeText={setUsername}
         />
-        <Text style={styles.whiteText}>password</Text>
         <TextInput
+          placeholder="password"
+          placeholderTextColor="grey"
           style={styles.input}
           value={password}
           onChangeText={setPassword}
         />
-        <Text style={styles.whiteText}>confirm password</Text>
         <TextInput
+          placeholder="confirm password"
+          placeholderTextColor="grey"
           style={styles.input}
           value={passwordCheck}
           onChangeText={setPasswordCheck}
         />
-        <Text style={styles.whiteText}>email</Text>
-        <TextInput style={styles.input} value={email} onChangeText={setEmail} />
-        <Text style={styles.whiteText}>first name</Text>
         <TextInput
+          placeholder="email"
+          placeholderTextColor="grey"
+          style={styles.input}
+          value={email}
+          onChangeText={setEmail}
+        />
+        <TextInput
+          placeholder="first name"
+          placeholderTextColor="grey"
           style={styles.input}
           value={firstName}
           onChangeText={setFirstName}
         />
-        <Text style={styles.whiteText}>last name</Text>
         <TextInput
+          placeholder="last name"
+          placeholderTextColor="grey"
           style={styles.input}
           value={lastName}
           onChangeText={setLastName}

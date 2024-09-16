@@ -1,10 +1,14 @@
 import { ContextProvider } from "./Context";
 import Main from "./components/Main";
+import { StatusBar } from "react-native";
 
 export default function App() {
   return (
-    <ContextProvider>
-      <Main />
-    </ContextProvider>
+    <>
+      <StatusBar hidden />
+      <ContextProvider>
+        <Main />
+      </ContextProvider>
+    </>
   );
 }

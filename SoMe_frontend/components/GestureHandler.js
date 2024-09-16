@@ -4,6 +4,8 @@ import GestureRecognizer, {
 } from "react-native-swipe-gestures";
 import { useState } from "react";
 import ComponentNavigation from "./ComponentNavigation";
+import { styles } from "../assets/styles";
+import ActionBar from "./ActionBar";
 
 export default function GestureHandler({
   components = [],
@@ -14,7 +16,7 @@ export default function GestureHandler({
   }
 
   const [componentIndex, setComponentIndex] = useState(defaultComponentIndex);
-
+  console.log(componentIndex);
   const { SWIPE_UP, SWIPE_DOWN, SWIPE_LEFT, SWIPE_RIGHT } = swipeDirections;
 
   function onSwipeHandler(direction, state) {
@@ -30,7 +32,7 @@ export default function GestureHandler({
         if (componentIndex >= components.length) {
           return;
         } else {
-          setComponentIndex += 1;
+          setComponentIndex(componentIndex + 1);
         }
         break;
 
@@ -39,7 +41,7 @@ export default function GestureHandler({
         if (componentIndex <= 0) {
           return;
         } else {
-          setComponentIndex -= 1;
+          setComponentIndex(componentIndex - 1);
         }
         break;
     }
@@ -48,7 +50,12 @@ export default function GestureHandler({
   let component = components[componentIndex];
 
   return (
-    <View>
+    <View style={styles.flexFillHeight}>
+      <ComponentNavigation
+        icons={components.map((comp) => comp.icon)}
+        activeComponentIndex={componentIndex}
+        setComponentIndex={setComponentIndex}
+      />
       <GestureRecognizer
         onSwipe={(direction, state) => onSwipeHandler(direction, state)}
         config={{
@@ -56,13 +63,8 @@ export default function GestureHandler({
           directionalOffsetThreshold: 50,
         }}
       >
-        <component.component {...screen.props} />
+        <component.component {...component.props} />
       </GestureRecognizer>
-      <ComponentNavigation
-        icons={components.map((comp) => comp.icon)}
-        activeLabelIndex={componentIndex}
-        setScreenIndex={setComponentIndex}
-      />
     </View>
   );
 }

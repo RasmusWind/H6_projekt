@@ -37,7 +37,7 @@ class SessionAuthenticationLogin(APIView):
     authentication_classes = ()
 
     def post(self, request):
-        user = get_object_or_404(models.ExtendedUser, username=request.data.get("username"))
+        user = get_object_or_404(models.User, username=request.data.get("username"))
         if not user.check_password(request.data.get("password")):
             return Response({"status": "error", "message":"Invalid username or password", "user":None, "token":None}, status=status.HTTP_404_NOT_FOUND)
         user_serializer = serializers.UserSerializer(instance=user)
@@ -64,7 +64,7 @@ class TokenAuthenticationLogin(APIView):
     authentication_classes = ()
 
     def post(self, request):
-        user = get_object_or_404(models.ExtendedUser, username=request.data.get("username"))
+        user = get_object_or_404(models.User, username=request.data.get("username"))
         if not user.check_password(request.data.get("password")):
             return Response({"status": "Invalid username or password", "user":None, "token":None}, status=status.HTTP_404_NOT_FOUND)
         user_serializer = serializers.UserSerializer(instance=user)
