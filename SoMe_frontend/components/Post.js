@@ -1,9 +1,12 @@
-import { View, Image, Text, Button } from "react-native";
+import { View, Image, Text, Button, TouchableOpacity } from "react-native";
 import { server_url } from "../Api";
 import { styles } from "../assets/styles";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { useDataContext } from "../Context";
+import ProfilePage from "./ProfilePage";
 
 export default function Post({ data }) {
+  const dataContext = useDataContext();
   const user = data.author;
   return (
     <View
@@ -31,16 +34,23 @@ export default function Post({ data }) {
           />
         </View>
         <View>
-          <View
-            style={{
-              height: 50,
-              justifyContent: "center",
+          <TouchableOpacity
+            onPress={() => {
+              console.log(data);
+              dataContext.setActionComponent(<ProfilePage user={user} />);
             }}
           >
-            <Text style={{ color: "white" }}>
-              {user.first_name} {user.last_name}
-            </Text>
-          </View>
+            <View
+              style={{
+                height: 50,
+                justifyContent: "center",
+              }}
+            >
+              <Text style={{ color: "white" }}>
+                {user.first_name} {user.last_name}
+              </Text>
+            </View>
+          </TouchableOpacity>
           <View>
             <Text style={{ color: "white" }}>{data.text}</Text>
           </View>

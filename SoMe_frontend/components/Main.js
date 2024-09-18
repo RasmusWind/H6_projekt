@@ -9,12 +9,12 @@ import PublicPostPage from "./PublicPostPage";
 import ActionBar from "./ActionBar";
 import { styles } from "../assets/styles";
 import FriendsList from "./FriendsList";
-import CreatePost from "./CreatePost";
+import ProfileMenu from "./ProfileMenu";
 import FriendPostPage from "./FriendPostPage";
 
 export default function Main() {
   const dataContext = useDataContext();
-  const [actionComponent, setActionComponent] = useState(null);
+
   useEffect(() => {
     sessionAuth
       .get(`/sessionGetUser`)
@@ -58,12 +58,18 @@ export default function Main() {
 
     return (
       <View style={styles.appBase}>
-        {!actionComponent ? (
+        {dataContext.showProfile ? (
+          <ProfileMenu
+            user={dataContext.user}
+            location={dataContext.profileXY}
+          />
+        ) : null}
+        {!dataContext.actionComponent ? (
           <GestureHandler components={components} defaultComponentIndex={1} />
         ) : (
-          actionComponent
+          dataContext.actionComponent
         )}
-        <ActionBar setActionComponent={setActionComponent} />
+        <ActionBar />
       </View>
     );
   }

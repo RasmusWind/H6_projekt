@@ -27,21 +27,24 @@ class ExtendedUserManager(UserManager):
         return friends
     
     def add_friend(self, from_user, to_user):
-        if FriendshipRequest.objects.filter(from_user=from_user, to_user=to_user):
+        if FriendshipRequest.objects.filter(from_user=from_user, to_user=to_user, rejected=False):
             raise Exception("Friend request already exists.")
-        if FriendshipRequest.objects.filter(to_user=from_user, from_user=to_user):
+        if FriendshipRequest.objects.filter(to_user=from_user, from_user=to_user, rejected=False):
             raise Exception("Friend request already exists.")
         
         FriendshipRequest.objects.create(from_user=from_user, to_user=to_user)
 
+    def remove_friend(self, from_user, to_user):
+        friendship = Friendship.objects.filter(Q(A=from_user, B=to_user)|Q(A=to_user, B=from_user)).first()
+        if friendship:
+            friendship.delete()
+
     def accept_friend_request(self, friend_request:FriendshipRequest):
         Friendship.objects.get_or_create(A=friend_request.from_user, B=friend_request.to_user)
-        friend_request.accepted = True
-        friend_request.save()
+        friend_request.delete()
 
     def reject_friend_request(self, friend_request:FriendshipRequest):
-        friend_request.rejected = True
-        friend_request.save()
+        friend_request.delete()
 
     def remove_friend_request(self, from_user, to_user):
         friend_request = FriendshipRequest.objects.filter(from_user=from_user, to_user=to_user).first()

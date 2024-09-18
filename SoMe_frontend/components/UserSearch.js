@@ -64,7 +64,11 @@ export default function UserSearch({ setActionComponent }) {
       sessionAuth
         .get(`search_users?searchTerm=${searchTerm}`)
         .then((response) => {
-          setUsers(response.data.users);
+          let response_users = response.data.users;
+          response_users = response_users.filter((user) => {
+            return !user.is_friend;
+          });
+          setUsers(response_users);
         });
     }, 1000);
     return () => clearTimeout(timeOutId);
@@ -74,7 +78,7 @@ export default function UserSearch({ setActionComponent }) {
     <View>
       <View style={styles.userSearch}>
         <Icon
-          onPress={() => setActionComponent(null)}
+          onPress={() => dataContext.setActionComponent(null)}
           style={styles.iconBack}
           name="arrow-left"
           size={30}

@@ -6,7 +6,7 @@ import CheckBox from "react-native-check-box";
 import { sessionAuth } from "../Api";
 import { useDataContext } from "../Context";
 
-export default function CreatePost({ setActionComponent }) {
+export default function CreatePost() {
   const dataContext = useDataContext();
   const [postText, setPostText] = useState();
   const [publicPost, setPublicPost] = useState(false);
@@ -33,7 +33,7 @@ export default function CreatePost({ setActionComponent }) {
       )
       .then((response) => {
         console.log(response.data);
-        setActionComponent(null);
+        dataContext.setActionComponent(null);
       })
       .catch((error) => {
         console.log(error);
@@ -44,7 +44,7 @@ export default function CreatePost({ setActionComponent }) {
     <View>
       <View style={styles.userSearch}>
         <Icon
-          onPress={() => setActionComponent(null)}
+          onPress={() => dataContext.setActionComponent(null)}
           style={styles.iconBack}
           name="arrow-left"
           size={30}

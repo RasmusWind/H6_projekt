@@ -20,6 +20,7 @@ export default function FriendPostPage() {
       style={{
         overflow: "scroll",
         padding: 5,
+        height: "100%",
       }}
     >
       <View

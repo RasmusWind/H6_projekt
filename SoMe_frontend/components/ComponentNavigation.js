@@ -15,10 +15,6 @@ export default function ComponentNavigation({
   const user = dataContext.user;
   const server_url = sessionAuth.getUri();
 
-  const [showProfile, setShowProfile] = useState(false);
-
-  function handleProfilePress() {}
-
   return (
     <View style={styles.navContainer}>
       <View style={styles.iconsContainer}>
@@ -32,6 +28,7 @@ export default function ComponentNavigation({
                 activeComponentIndex == index ? activeIconColor : iconColor
               }
               onPress={() => {
+                dataContext.setShowProfile(false);
                 setComponentIndex(index);
               }}
             />
@@ -40,7 +37,13 @@ export default function ComponentNavigation({
       </View>
       <View style={styles.navigationProfile}>
         <TouchableHighlight
-          onPress={handleProfilePress}
+          onPress={(event) => {
+            dataContext.setProfileXY([
+              event.nativeEvent.pageX,
+              event.nativeEvent.pageY,
+            ]);
+            dataContext.setShowProfile(!dataContext.showProfile);
+          }}
           style={{ borderRadius: 50 }}
         >
           <Image
@@ -49,7 +52,6 @@ export default function ComponentNavigation({
           />
         </TouchableHighlight>
       </View>
-      {showProfile ? <ProfileMenu data={dataContext.user} /> : null}
     </View>
   );
 }

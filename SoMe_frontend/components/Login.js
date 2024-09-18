@@ -17,6 +17,7 @@ export default function Login() {
 
   useEffect(() => {
     BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick);
+    dataContext.setShowProfile(false);
   }, []);
 
   function userLogin(event) {

@@ -3,9 +3,9 @@ from rest_framework.views import APIView, Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from django.shortcuts import get_object_or_404
-from base.models import User, Post, Comment, FriendshipRequest, ExtendedUser
+from base.models import User, Post, Comment, FriendshipRequest, ExtendedUser, Friendship
 from django.contrib.auth.models import User
-from base.serializers import UserSerializer, PostSerializer, CreatePostSerializer, CommentSerializer, FriendshipRequestSerializer
+from base.serializers import UserSerializer, PostSerializer, FriendshipRequestSerializer, CreatePostSerializer, CommentSerializer, FriendshipRequestSerializer
 from .views import tokenauth_header
 from rest_framework.decorators import (
     api_view,
@@ -16,6 +16,7 @@ from drf_yasg.utils import swagger_auto_schema
 from rest_framework.authtoken.models import Token
 import json
 from django.db.models import Exists, OuterRef, Q
+from django.db.models.functions import Coalesce
 
 # Dette skal stå før hver api endpoint for sessionauth
 #@swagger_auto_schema(
@@ -72,7 +73,8 @@ def search_users(request):
             Q(email__contains=searchTerm)|
             Q(email__icontains=searchTerm)
         ).annotate(
-            has_pending_friend_request=Exists(FriendshipRequest.objects.filter(from_user=request.user, to_user_id=OuterRef('pk')))
+            has_pending_friend_request=Exists(FriendshipRequest.objects.filter(from_user=request.user, to_user_id=OuterRef('pk'))),
+            is_friend=Exists(Friendship.objects.filter(Q(A=request.user, B_id=OuterRef('pk'))|Q(A_id=OuterRef('pk'), B=request.user)))
         ).exclude(id=request.user.id)
         print("users:",users)
 
@@ -122,6 +124,28 @@ def get_friends(request):
     return Response({"status": "success", "friends":user_serializer.data})
 
 
+@api_view(["GET"])
+@authentication_classes([SessionAuthentication])
+@permission_classes([IsAuthenticated])
+def get_friend_requests(request):
+    friend_requests = FriendshipRequest.objects.filter(to_user=request.user).select_related("from_user")
+    from_users = [fr.from_user for fr in friend_requests]
+    user_serializer = UserSerializer(from_users, many=True)
+    return Response({"status": "success", "users":user_serializer.data})
+
+
+@api_view(["POST"])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def remove_friend(request):
+    friend_username = request.data.get("friend_username")
+    friend = User.objects.filter(username=friend_username).first()
+    if friend:
+        ExtendedUser.objects.remove_friend(request.user, friend)
+        return Response({"status": "success"}, status=status.HTTP_200_OK)
+    return Response({"status": "error", "message": "User not found"}, status=status.HTTP_400_BAD_REQUEST)
+
+
 @api_view(["POST"])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
@@ -150,12 +174,24 @@ def remove_friend_request(request):
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def accept_friend_request(request):
-    friend_request_id = request.data.get("friend_request_id")
-    friend_request = FriendshipRequest.objects.filter(pk=friend_request_id)
+    from_username = request.data.get("from_username")
+    friend_request = FriendshipRequest.objects.filter(to_user=request.user, from_user__username=from_username).first()
     if friend_request:
         ExtendedUser.objects.accept_friend_request(friend_request)
-        return Response({"status":"success"})
-    return Response({"status":"error", "message":"Friend request not found"})
+        return Response({"status":"success"}, status=status.HTTP_200_OK)
+    return Response({"status":"error", "message":"Friend request not found"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(["POST"])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def reject_friend_request(request):
+    from_username = request.data.get("from_username")
+    friend_request = FriendshipRequest.objects.filter(to_user=request.user, from_user__username=from_username).first()
+    if friend_request:
+        ExtendedUser.objects.reject_friend_request(friend_request)
+        return Response({"status":"success"}, status=status.HTTP_200_OK)
+    return Response({"status":"error", "message":"Friend request not found"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(["POST"])
@@ -178,3 +214,26 @@ def create_post(request):
         return Response({"status":"success", "post": post_serializer.data}, status=status.HTTP_200_OK)
     print(post_serializer.errors)
     return Response({"status": "error", "message": post_serializer.error_messages}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(["POST"])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def update_profile(request):
+    image_data = request.data.get("file")
+    firstName = request.data.get("first_name")
+    lastName = request.data.get("last_name")
+    email = request.data.get("email")
+
+    request.user.first_name = firstName
+    request.user.last_name = lastName
+    request.user.email = email
+    request.user.save()
+    if image_data:
+        request.user.extendeduser.image = image_data
+    else:
+        request.user.extendeduser.image = "/default.jpg"
+
+    request.user.extendeduser.save()
+
+    return Response({"status":"success", "user":UserSerializer(instance=request.user).data})

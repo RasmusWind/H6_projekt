@@ -20,6 +20,7 @@ export default function PublicPostPage() {
       style={{
         overflow: "scroll",
         padding: 5,
+        height:"100%",
       }}
     >
       <View

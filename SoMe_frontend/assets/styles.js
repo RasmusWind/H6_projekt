@@ -184,4 +184,44 @@ export const styles = StyleSheet.create({
     borderRadius: 50,
     margin: 5,
   },
+  profileMenu: {
+    position: "absolute",
+    width: 300,
+    backgroundColor: "grey",
+  },
+  friendRequestTextDisabled: {},
+  friendRequestText: {},
+  profileMenuText: {
+    fontSize: 20,
+  },
+  profilePageImage: {
+    width: 150,
+    height: 150,
+    borderRadius: 50,
+  },
+  profileContainer: {
+    padding: 10,
+    rowGap: 10,
+    justifyContent: "center",
+  },
+  profileInput: {
+    borderWidth: 1,
+    borderColor: "grey",
+    width: 200,
+    color: "white",
+    padding: 5,
+    margin: 6,
+    height: 30,
+  },
+  profileInputContainer: {
+    flexDirection: "row",
+    columnGap: 5,
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  uploadImageProfile: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+  },
 });

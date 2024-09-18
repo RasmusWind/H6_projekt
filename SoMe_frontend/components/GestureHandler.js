@@ -5,18 +5,18 @@ import GestureRecognizer, {
 import { useState } from "react";
 import ComponentNavigation from "./ComponentNavigation";
 import { styles } from "../assets/styles";
-import ActionBar from "./ActionBar";
+import { useDataContext } from "../Context";
 
 export default function GestureHandler({
   components = [],
   defaultComponentIndex = 0,
 }) {
+  const dataContext = useDataContext();
   if (components.length == 0) {
     return;
   }
 
   const [componentIndex, setComponentIndex] = useState(defaultComponentIndex);
-  console.log(componentIndex);
   const { SWIPE_UP, SWIPE_DOWN, SWIPE_LEFT, SWIPE_RIGHT } = swipeDirections;
 
   function onSwipeHandler(direction, state) {
