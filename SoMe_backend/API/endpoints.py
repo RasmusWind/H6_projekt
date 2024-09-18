@@ -90,7 +90,7 @@ def search_users(request):
 @authentication_classes([SessionAuthentication])
 @permission_classes([IsAuthenticated])
 def get_all_posts(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by("-pk")
     post_serializer = PostSerializer(posts, many=True)
     return Response({"status":"success", "posts":post_serializer.data})
 
@@ -99,7 +99,7 @@ def get_all_posts(request):
 @authentication_classes([SessionAuthentication])
 @permission_classes([IsAuthenticated])
 def get_public_posts(request):
-    posts = Post.objects.filter(public=True)
+    posts = Post.objects.filter(public=True).order_by("-pk")
     post_serializer = PostSerializer(posts, many=True)
     return Response({"status":"success", "posts":post_serializer.data})
 
@@ -110,7 +110,7 @@ def get_public_posts(request):
 def get_friend_posts(request):
     user = request.user
     friends = ExtendedUser.objects.friends(user)
-    posts = Post.objects.filter(author__in=friends)
+    posts = Post.objects.filter(author__in=friends).order_by("-pk")
     post_serializer = PostSerializer(posts, many=True)
     return Response({"status":"success", "posts":post_serializer.data})
 
@@ -153,9 +153,14 @@ def send_friend_request(request):
     to_user_username = request.data.get("to_user_username")
     to_user = User.objects.filter(username=to_user_username).first()
     if to_user:
-        ExtendedUser.objects.add_friend(request.user, to_user)
+        result = ExtendedUser.objects.add_friend(request.user, to_user)
+        print(result)
+        if result < 0:
+            return Response({"status": "error", "message": "Friend request already exists"}, status=status.HTTP_400_BAD_REQUEST)
+        if result == 1:
+            return Response({"status":"success", "message": "accepted"})
         return Response({"status": "success"})
-    return Response({"status": "error", "message": "User not found"})
+    return Response({"status": "error", "message": "User not found"}, status=status.HTTP_404_NOT_FOUND)
 
 
 @api_view(["POST"])
@@ -237,3 +242,18 @@ def update_profile(request):
     request.user.extendeduser.save()
 
     return Response({"status":"success", "user":UserSerializer(instance=request.user).data})
+
+
+@api_view(["GET"])
+@authentication_classes([SessionAuthentication])
+@permission_classes([IsAuthenticated])
+def get_outbound_friend_requests(request):
+    frs = list(FriendshipRequest.objects.filter(from_user=request.user).select_related("to_user").values_list("to_user_id", flat=True))
+    return Response({"outbound_friendrequests": frs}, status=status.HTTP_200_OK)
+
+@api_view(["GET"])
+@authentication_classes([SessionAuthentication])
+@permission_classes([IsAuthenticated])
+def get_inbound_friend_requests(request):
+    frs = list(FriendshipRequest.objects.filter(to_user=request.user).select_related("from_user").values_list("from_user_id", flat=True))
+    return Response({"inbound_friendrequests": frs}, status=status.HTTP_200_OK)

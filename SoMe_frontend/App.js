@@ -1,13 +1,13 @@
 import { ContextProvider } from "./Context";
-import Main from "./components/Main";
 import { StatusBar } from "react-native";
+import SocketWrapper from "./components/SocketWrapper";
 
 export default function App() {
   return (
     <>
       <StatusBar hidden />
       <ContextProvider>
-        <Main />
+        <SocketWrapper />
       </ContextProvider>
     </>
   );

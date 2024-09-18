@@ -35,11 +35,13 @@ export default function FriendRequests() {
           return from_user.username != fru.username;
         });
         setFriendRequestUsers(temp_fru);
-        if (temp_fru.length == 0) {
-          let user = dataContext.user;
-          user.has_friend_requests = false;
-          dataContext.setUser(user);
-        }
+        dataContext.webSocket.send(
+          JSON.stringify({
+            sender: dataContext.user,
+            receiver: from_user.id,
+            message: "removefriendrequest",
+          })
+        );
       });
   }
 
@@ -62,11 +64,17 @@ export default function FriendRequests() {
           return from_user.username != fru.username;
         });
         setFriendRequestUsers(temp_fru);
-        if (temp_fru.length == 0) {
-          let user = dataContext.user;
-          user.has_friend_requests = false;
-          dataContext.setUser(user);
-        }
+
+        let tempuser = dataContext.user;
+        tempuser.friends = [...tempuser.friends, from_user.id];
+        dataContext.setUser(tempuser);
+        dataContext.webSocket.send(
+          JSON.stringify({
+            sender: dataContext.user,
+            receiver: from_user.id,
+            message: "acceptfriendrequest",
+          })
+        );
       });
   }
 

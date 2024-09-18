@@ -26,13 +26,19 @@ class ExtendedUserManager(UserManager):
         friends = User.objects.filter(pk__in=friends)
         return friends
     
+    # -1 = bad, 0 = good, 1 = different good
     def add_friend(self, from_user, to_user):
+
         if FriendshipRequest.objects.filter(from_user=from_user, to_user=to_user, rejected=False):
-            raise Exception("Friend request already exists.")
-        if FriendshipRequest.objects.filter(to_user=from_user, from_user=to_user, rejected=False):
-            raise Exception("Friend request already exists.")
+            return -1
+        
+        existing_friend_request_to_me = FriendshipRequest.objects.filter(to_user=from_user, from_user=to_user, rejected=False).first()
+        if existing_friend_request_to_me:
+            self.accept_friend_request(existing_friend_request_to_me)
+            return 1
         
         FriendshipRequest.objects.create(from_user=from_user, to_user=to_user)
+        return 0
 
     def remove_friend(self, from_user, to_user):
         friendship = Friendship.objects.filter(Q(A=from_user, B=to_user)|Q(A=to_user, B=from_user)).first()
@@ -62,6 +68,7 @@ class ExtendedUser(models.Model):
     @property
     def has_friend_requests(self):
         return FriendshipRequest.objects.filter(to_user=self.user).exists()
+
 
 # Friendships følger lige nu formularen: 
 # F = N * (N - 1)

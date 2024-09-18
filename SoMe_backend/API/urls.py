@@ -19,7 +19,10 @@ urlpatterns = [
     path('remove_friend', endpoints.remove_friend),
     path('get_friends', endpoints.get_friends),
     path('get_public_posts', endpoints.get_public_posts),
+    path('get_friend_posts', endpoints.get_friend_posts),
     path('update_profile', endpoints.update_profile),
+    path('get_outbound_friend_requests', endpoints.get_outbound_friend_requests),
+    path('get_inbound_friend_requests', endpoints.get_inbound_friend_requests),
 
     path('swagger/', views.schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', views.schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),

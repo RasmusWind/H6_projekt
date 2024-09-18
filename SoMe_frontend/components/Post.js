@@ -36,7 +36,6 @@ export default function Post({ data }) {
         <View>
           <TouchableOpacity
             onPress={() => {
-              console.log(data);
               dataContext.setActionComponent(<ProfilePage user={user} />);
             }}
           >

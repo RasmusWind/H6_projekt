@@ -24,14 +24,12 @@ export default function UserSearch({ setActionComponent }) {
         }
       )
       .then((response) => {
-        let user_index = users.indexOf(to_user);
-        to_user.has_pending_friend_request = false;
-        setUsers([
-          ...users.slice(0, user_index),
-          to_user,
-          ...users.slice(user_index + 1),
-        ]);
-      });
+        let temp = dataContext.outboundFriendRequests.filter((obj) => {
+          return obj != to_user.id;
+        });
+        dataContext.setOutboundFriendRequests(temp);
+      })
+      .catch((error) => {});
   }
 
   function handleAddFriend(to_user) {
@@ -49,15 +47,26 @@ export default function UserSearch({ setActionComponent }) {
         }
       )
       .then((response) => {
-        let user_index = users.indexOf(to_user);
-        to_user.has_pending_friend_request = true;
-        setUsers([
-          ...users.slice(0, user_index),
-          to_user,
-          ...users.slice(user_index + 1),
-        ]);
-      });
+        dataContext.setOutboundFriendRequests([...dataContext.outboundFriendRequests, to_user.id]);
+        dataContext.webSocket.send(
+          JSON.stringify({
+            sender: dataContext.user,
+            receiver: to_user.id,
+            message: "friendrequest",
+          })
+        );
+      })
+      .catch((error) => {});
   }
+
+  useEffect(() => {
+    sessionAuth
+      .get("/get_outbound_friend_requests")
+      .then((response) => {
+        dataContext.setOutboundFriendRequests(response.data.outbound_friendrequests);
+      })
+      .catch((error) => {});
+  }, []);
 
   useEffect(() => {
     const timeOutId = setTimeout(() => {
@@ -112,11 +121,11 @@ export default function UserSearch({ setActionComponent }) {
                 {user.first_name} {user.last_name}
               </Text>
             </View>
-            {user.has_pending_friend_request ? (
+            {dataContext.outboundFriendRequests.includes(user.id) ? (
               <Button
                 style={styles.userListButton}
                 title="pending"
-                color="red"
+                color="orange"
                 onPress={() => handleRemoveFriendRequest(user)}
               />
             ) : (

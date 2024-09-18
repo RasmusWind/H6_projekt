@@ -32,7 +32,6 @@ export default function SignUp({ setSignUp }) {
   }, []);
 
   function handleSignupSubmit(event) {
-    console.log(password);
     if (password != passwordCheck) {
       setErrorText("Passwords do not match");
       return;

@@ -1,7 +1,7 @@
 from . import models
 from rest_framework.serializers import ModelSerializer, IntegerField, SerializerMethodField, FileField
 from django.contrib.auth.models import User
-
+from API.consumers import ONLINE
 
 class ExtendedUserSerializer(ModelSerializer):
     #image = FileField()
@@ -10,11 +10,15 @@ class ExtendedUserSerializer(ModelSerializer):
         fields = ("image",)
 
 class UserSerializer(ModelSerializer):
+    is_online = SerializerMethodField()
     friends = SerializerMethodField()
-    has_pending_friend_request = SerializerMethodField()
-    is_friend = SerializerMethodField()
-    has_friend_requests = SerializerMethodField()
     extendeduser = ExtendedUserSerializer()
+
+    def get_is_online(self, obj):
+        try:
+            return obj.id in ONLINE
+        except:
+            return False
 
     def get_friends(self, obj):
         try:
@@ -22,27 +26,10 @@ class UserSerializer(ModelSerializer):
         except:
             return None
 
-    def get_has_pending_friend_request(self, obj):
-        try:
-            return obj.has_pending_friend_request
-        except:
-            return None
-        
-    def get_is_friend(self, obj):
-        try:
-            return obj.is_friend
-        except:
-            return None
-    
-    def get_has_friend_requests(self, obj):
-        try:
-            return obj.extendeduser.has_friend_requests
-        except:
-            return None
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'password', 'first_name', 'last_name', 'is_staff', 'has_pending_friend_request', 'has_friend_requests', 'is_friend', 'extendeduser', 'friends')
+        fields = ('id', 'username', 'password', 'first_name', 'last_name', 'is_staff', 'extendeduser', 'friends', 'is_online')
 
 
 class PostSerializer(ModelSerializer):

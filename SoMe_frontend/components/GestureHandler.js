@@ -16,6 +16,7 @@ export default function GestureHandler({
     return;
   }
 
+  const [scrollPosition, setScrollPosition] = useState(-1);
   const [componentIndex, setComponentIndex] = useState(defaultComponentIndex);
   const { SWIPE_UP, SWIPE_DOWN, SWIPE_LEFT, SWIPE_RIGHT } = swipeDirections;
 

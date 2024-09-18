@@ -32,7 +32,15 @@ export default function CreatePost() {
         }
       )
       .then((response) => {
-        console.log(response.data);
+        dataContext.webSocket.send(
+          JSON.stringify({
+            sender: dataContext.user.id,
+            receiver: publicPost ? "publicPost" : "friendsPost",
+            message: publicPost ? "publicPost" : "friendsPost",
+          })
+        );
+      })
+      .then(() => {
         dataContext.setActionComponent(null);
       })
       .catch((error) => {

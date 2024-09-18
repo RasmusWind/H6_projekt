@@ -5,12 +5,24 @@ import { useDataContext } from "../Context";
 import ProfilePage from "./ProfilePage";
 import { useEffect } from "react";
 import FriendRequests from "./FriendRequests";
+import { sessionAuth } from "../Api";
 
-export default function ProfileMenu({ user, location }) {
+export default function ProfileMenu({ location }) {
   const dataContext = useDataContext();
   const boxWidth = 170;
   const menuTop = location[1];
   const menuLeft = location[0] - boxWidth;
+
+  useEffect(() => {
+    sessionAuth
+      .get("/get_inbound_friend_requests")
+      .then((response) => {
+        dataContext.setInboundFriendRequests(
+          response.data.inbound_friendrequests
+        );
+      })
+      .catch((error) => {});
+  }, []);
 
   return (
     <View
@@ -37,7 +49,7 @@ export default function ProfileMenu({ user, location }) {
       >
         <Text style={styles.profileMenuText}>Profile</Text>
       </TouchableHighlight>
-      {user.has_friend_requests ? (
+      {dataContext.inboundFriendRequests.length > 0 ? (
         <TouchableHighlight
           onPress={() => {
             dataContext.setShowProfile(false);

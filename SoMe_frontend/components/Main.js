@@ -11,6 +11,7 @@ import { styles } from "../assets/styles";
 import FriendsList from "./FriendsList";
 import ProfileMenu from "./ProfileMenu";
 import FriendPostPage from "./FriendPostPage";
+import { websocket_url } from "../Api";
 
 export default function Main() {
   const dataContext = useDataContext();
@@ -21,7 +22,6 @@ export default function Main() {
       .then(function (response) {
         dataContext.setUser(response.user);
         dataContext.setToken(response.token);
-        console.log("user: ", dataContext.user);
       })
       .catch(function (error) {
         dataContext.setUser();
@@ -60,7 +60,6 @@ export default function Main() {
       <View style={styles.appBase}>
         {dataContext.showProfile ? (
           <ProfileMenu
-            user={dataContext.user}
             location={dataContext.profileXY}
           />
         ) : null}

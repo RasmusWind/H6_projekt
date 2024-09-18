@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { websocket_url } from "./Api";
 
 const Context = createContext({
@@ -15,10 +15,15 @@ export function useDataContext() {
 export function ContextProvider({ children }) {
   const [user, setUser] = useState();
   const [token, setToken] = useState();
+  const [isLoggedIn, setIsLoggedIn] = useState();
   const [showProfile, setShowProfile] = useState(false);
   const [profileXY, setProfileXY] = useState();
   const [actionComponent, setActionComponent] = useState(null);
-  const websocket = new WebSocket(websocket_url);
+  const [webSocket, setWebSocket] = useState();
+  const [publicPostUpdatedAmount, setPublicPostUpdatedAmount] = useState(0);
+  const [friendPostUpdatedAmount, setFriendPostUpdatedAmount] = useState(0);
+  const [inboundFriendRequests, setInboundFriendRequests] = useState([]);
+  const [outboundFriendRequests, setOutboundFriendRequests] = useState([]);
 
   return (
     <Context.Provider
@@ -33,7 +38,18 @@ export function ContextProvider({ children }) {
         setProfileXY: setProfileXY,
         actionComponent: actionComponent,
         setActionComponent: setActionComponent,
-        webSocket: websocket,
+        webSocket: webSocket,
+        setWebSocket: setWebSocket,
+        isLoggedIn: isLoggedIn,
+        setIsLoggedIn: setIsLoggedIn,
+        publicPostUpdatedAmount: publicPostUpdatedAmount,
+        setPublicPostUpdatedAmount: setPublicPostUpdatedAmount,
+        friendPostUpdatedAmount: friendPostUpdatedAmount,
+        setFriendPostUpdatedAmount: setFriendPostUpdatedAmount,
+        inboundFriendRequests: inboundFriendRequests,
+        setInboundFriendRequests: setInboundFriendRequests,
+        outboundFriendRequests: outboundFriendRequests,
+        setOutboundFriendRequests: setOutboundFriendRequests,
       }}
     >
       {children}

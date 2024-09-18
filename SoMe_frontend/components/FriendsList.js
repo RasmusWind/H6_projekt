@@ -40,9 +40,24 @@ export default function FriendsList({ setState }) {
         }
       )
       .then((response) => {
-        let friend_index = friends.indexOf(friend);
-        let friends_temp = friends.slice(friend_index, friend_index);
+        let friends_temp = friends.filter((obj) => {
+          return friend.username != obj.username;
+        });
         setFriends(friends_temp);
+
+        let temp = dataContext.user;
+        temp.friends = temp.friends.filter((obj) => {
+          return obj != friend.id;
+        });
+        dataContext.setUser(temp);
+
+        dataContext.webSocket.send(
+          JSON.stringify({
+            sender: dataContext.user,
+            receiver: friend.id,
+            message: "removefriend",
+          })
+        );
       });
   }
 

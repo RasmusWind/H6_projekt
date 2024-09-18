@@ -7,7 +7,7 @@ import {
   Button,
 } from "react-native";
 import { useDataContext } from "../Context";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as DocumentPicker from "expo-document-picker";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { styles } from "../assets/styles";
@@ -20,10 +20,18 @@ export default function ProfilePage({ user }) {
   const [email, setEmail] = useState(user.email);
   const [image, setImage] = useState(user.extendeduser.image);
   const [file, setFile] = useState();
-  const [isFriend, setIsFriend] = useState(
-    dataContext.user.friends.includes(user.id)
-  );
-  const [pendingFR, setPendingFR] = useState(user.has_pending_friend_request);
+  useEffect(() => {
+    sessionAuth.get("/get_inbound_friend_requests").then((response) => {
+      dataContext.setInboundFriendRequests(
+        response.data.inbound_friendrequests
+      );
+    });
+    sessionAuth.get("/get_outbound_friend_requests").then((response) => {
+      dataContext.setOutboundFriendRequests(
+        response.data.outbound_friendrequests
+      );
+    });
+  }, []);
 
   function removeFriendRequest(to_user) {
     sessionAuth
@@ -38,8 +46,17 @@ export default function ProfilePage({ user }) {
         }
       )
       .then((response) => {
-        setPendingFR(false);
-        setIsFriend(false);
+        let temp = dataContext.outboundFriendRequests.filter((obj) => {
+          return obj != to_user.id;
+        });
+        dataContext.setOutboundFriendRequests(temp);
+        dataContext.webSocket.send(
+          JSON.stringify({
+            sender: dataContext.user,
+            receiver: to_user.id,
+            message: "removefriendrequest",
+          })
+        );
       });
   }
 
@@ -58,7 +75,35 @@ export default function ProfilePage({ user }) {
         }
       )
       .then((response) => {
-        setPendingFR(!pendingFR);
+        if (response.data.message == "accepted") {
+          let temp = dataContext.inboundFriendRequests.filter((obj) => {
+            return obj != user.id;
+          });
+          dataContext.setInboundFriendRequests(temp);
+          let tempuser = dataContext.user;
+          tempuser.friends.push(user.id);
+          dataContext.setUser(tempuser);
+          user.friends.push(dataContext.user.id);
+          dataContext.webSocket.send(
+            JSON.stringify({
+              sender: dataContext.user,
+              receiver: to_user.id,
+              message: "acceptfriendrequest",
+            })
+          );
+        } else {
+          dataContext.setOutboundFriendRequests([
+            ...dataContext.outboundFriendRequests,
+            user.id,
+          ]);
+          dataContext.webSocket.send(
+            JSON.stringify({
+              sender: dataContext.user,
+              receiver: to_user.id,
+              message: "friendrequest",
+            })
+          );
+        }
       });
   }
 
@@ -77,9 +122,19 @@ export default function ProfilePage({ user }) {
         }
       )
       .then((response) => {
-        let userindex = dataContext.user.friends.indexOf(user.id);
-        dataContext.user.friends.slice(userindex, userindex);
-        setIsFriend(!isFriend);
+        let tempuser = dataContext.user;
+        tempuser.friends = tempuser.friends.filter((obj) => {
+          return obj != to_user.id;
+        });
+        dataContext.setUser(tempuser);
+
+        dataContext.webSocket.send(
+          JSON.stringify({
+            sender: dataContext.user,
+            receiver: to_user.id,
+            message: "removefriend",
+          })
+        );
       });
   }
 
@@ -111,8 +166,6 @@ export default function ProfilePage({ user }) {
         setImage(new_user.extendeduser.image);
       });
   }
-
-  console.log(user);
 
   if (dataContext.user.username != user.username) {
     return (
@@ -164,26 +217,36 @@ export default function ProfilePage({ user }) {
             </View>
           </View>
         </View>
-        {isFriend ? (
+        {dataContext.user.friends.includes(user.id) ? (
           <Button
             title="Remove friend"
             color="red"
             onPress={() => removeFriend(user)}
           />
         ) : null}
-        {pendingFR ? (
+        {dataContext.outboundFriendRequests.includes(user.id) ? (
           <Button
             title="Pending"
-            color="yellow"
+            color="orange"
             onPress={() => removeFriendRequest(user)}
           />
-        ) : (
+        ) : null}
+        {!dataContext.user.friends.includes(user.id) &&
+        !dataContext.outboundFriendRequests.includes(user.id) &&
+        !dataContext.inboundFriendRequests.includes(user.id) ? (
           <Button
             title="Add friend"
             color="green"
             onPress={() => addFriend(user)}
           />
-        )}
+        ) : null}
+        {dataContext.inboundFriendRequests.includes(user.id) ? (
+          <Button
+            title="Accept friend request"
+            color="green"
+            onPress={() => addFriend(user)}
+          />
+        ) : null}
       </View>
     );
   }
