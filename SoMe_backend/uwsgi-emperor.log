@@ -1,0 +1,1586 @@
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 17:21:34 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/SoMe_backend
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+!!! Python Home is not a directory: /home/pi/H6_projekt/env !!!
+Set PythonHome to /home/pi/H6_projekt/env
+Python path configuration:
+  PYTHONHOME = '/home/pi/H6_projekt/env'
+  PYTHONPATH = (not set)
+  program name = '/home/pi/H6_projekt/env/bin/python'
+  isolated = 0
+  environment = 1
+  user site = 1
+  safe_path = 0
+  import site = 1
+  is in build tree = 0
+  stdlib dir = '/home/pi/H6_projekt/env/lib/python3.12'
+  sys._base_executable = '/home/pi/H6_projekt/env/bin/python'
+  sys.base_prefix = '/home/pi/H6_projekt/env'
+  sys.base_exec_prefix = '/home/pi/H6_projekt/env'
+  sys.platlibdir = 'lib'
+  sys.executable = '/home/pi/H6_projekt/env/bin/python'
+  sys.prefix = '/home/pi/H6_projekt/env'
+  sys.exec_prefix = '/home/pi/H6_projekt/env'
+  sys.path = [
+    '/home/pi/H6_projekt/env/lib/python312.zip',
+    '/home/pi/H6_projekt/env/lib/python3.12',
+    '/home/pi/H6_projekt/env/lib/python3.12/lib-dynload',
+  ]
+Fatal Python error: init_fs_encoding: failed to get the Python codec of the filesystem encoding
+Python runtime state: core initialized
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x0000007fbabb1040 (most recent call first):
+  <no Python frame>
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 17:25:05 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/SoMe_backend
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x5570e1fcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x5570e1fcc8 pid: 20564 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20564)
+spawned uWSGI worker 1 (pid: 20565, cores: 1)
+spawned uWSGI worker 2 (pid: 20566, cores: 1)
+spawned uWSGI worker 3 (pid: 20567, cores: 1)
+spawned uWSGI worker 4 (pid: 20568, cores: 1)
+spawned uWSGI worker 5 (pid: 20569, cores: 1)
+spawned uWSGI worker 6 (pid: 20570, cores: 1)
+spawned uWSGI worker 7 (pid: 20571, cores: 1)
+spawned uWSGI worker 8 (pid: 20572, cores: 1)
+spawned uWSGI worker 9 (pid: 20573, cores: 1)
+spawned uWSGI worker 10 (pid: 20574, cores: 1)
+[pid: 20571|app: 0|req: 1/1] 87.49.45.114 () {44 vars in 846 bytes} [Thu Sep 19 15:25:10 2024] GET /admin/ => generated 0 bytes in 480 msecs (HTTP/1.1 302) 10 headers in 380 bytes (2 switches on core 0)
+[pid: 20573|app: 0|req: 1/2] 87.49.45.114 () {44 vars in 883 bytes} [Thu Sep 19 15:25:11 2024] GET /admin/login/?next=/admin/ => generated 4160 bytes in 500 msecs (HTTP/1.1 200) 10 headers in 478 bytes (2 switches on core 0)
+...brutally killing workers...
+worker 6 buried after 3 seconds
+worker 1 buried after 4 seconds
+worker 2 buried after 4 seconds
+worker 3 buried after 4 seconds
+worker 4 buried after 4 seconds
+worker 5 buried after 4 seconds
+worker 7 buried after 4 seconds
+worker 8 buried after 4 seconds
+worker 9 buried after 4 seconds
+worker 10 buried after 4 seconds
+binary reloading uWSGI...
+chdir() to /home/pi/git/H6_projekt/SoMe_backend
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock)
+running /home/pi/git/H6_projekt/env/bin/uwsgi
+[uWSGI] getting INI configuration from some_backend_uwsgi.ini
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 15:28:12 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/SoMe_backend
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x558b22fcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x558b22fcc8 pid: 20564 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 20564)
+spawned uWSGI worker 1 (pid: 20659, cores: 1)
+spawned uWSGI worker 2 (pid: 20660, cores: 1)
+spawned uWSGI worker 3 (pid: 20661, cores: 1)
+spawned uWSGI worker 4 (pid: 20662, cores: 1)
+spawned uWSGI worker 5 (pid: 20663, cores: 1)
+spawned uWSGI worker 6 (pid: 20664, cores: 1)
+spawned uWSGI worker 7 (pid: 20665, cores: 1)
+spawned uWSGI worker 8 (pid: 20666, cores: 1)
+spawned uWSGI worker 9 (pid: 20667, cores: 1)
+spawned uWSGI worker 10 (pid: 20668, cores: 1)
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 17:31:48 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x555db6fcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x555db6fcc8 pid: 1952 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1952)
+spawned uWSGI worker 1 (pid: 1953, cores: 1)
+spawned uWSGI worker 2 (pid: 1954, cores: 1)
+spawned uWSGI worker 3 (pid: 1955, cores: 1)
+spawned uWSGI worker 4 (pid: 1956, cores: 1)
+spawned uWSGI worker 5 (pid: 1957, cores: 1)
+spawned uWSGI worker 6 (pid: 1958, cores: 1)
+spawned uWSGI worker 7 (pid: 1959, cores: 1)
+spawned uWSGI worker 8 (pid: 1960, cores: 1)
+spawned uWSGI worker 9 (pid: 1961, cores: 1)
+spawned uWSGI worker 10 (pid: 1962, cores: 1)
+[pid: 1960|app: 0|req: 1/1] 87.49.45.114 () {44 vars in 883 bytes} [Thu Sep 19 15:32:00 2024] GET /admin/login/?next=/admin/ => generated 4160 bytes in 633 msecs (HTTP/1.1 200) 10 headers in 478 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+[pid: 1961|app: 0|req: 1/2] 87.49.45.114 () {44 vars in 883 bytes} [Thu Sep 19 15:32:05 2024] GET /admin/login/?next=/admin/ => generated 4160 bytes in 545 msecs (HTTP/1.1 200) 10 headers in 478 bytes (2 switches on core 0)
+announcing my loyalty to the Emperor...
+SIGINT/SIGTERM received...killing workers...
+Thu Sep 19 15:32:27 2024 - received message 0 from emperor
+worker 9 buried after 3 seconds
+worker 10 buried after 3 seconds
+worker 1 buried after 4 seconds
+worker 2 buried after 4 seconds
+worker 3 buried after 4 seconds
+worker 4 buried after 4 seconds
+worker 5 buried after 4 seconds
+worker 6 buried after 4 seconds
+worker 7 buried after 4 seconds
+worker 8 buried after 4 seconds
+goodbye to uWSGI.
+VACUUM: unix socket /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock removed.
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 17:47:37 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x5557befcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5557befcc8 pid: 2139 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2139)
+spawned uWSGI worker 1 (pid: 2140, cores: 1)
+spawned uWSGI worker 2 (pid: 2141, cores: 1)
+spawned uWSGI worker 3 (pid: 2142, cores: 1)
+spawned uWSGI worker 4 (pid: 2143, cores: 1)
+spawned uWSGI worker 5 (pid: 2144, cores: 1)
+spawned uWSGI worker 6 (pid: 2145, cores: 1)
+spawned uWSGI worker 7 (pid: 2146, cores: 1)
+spawned uWSGI worker 8 (pid: 2147, cores: 1)
+spawned uWSGI worker 9 (pid: 2148, cores: 1)
+spawned uWSGI worker 10 (pid: 2149, cores: 1)
+[pid: 2140|app: 0|req: 1/1] 87.49.45.114 () {44 vars in 846 bytes} [Thu Sep 19 15:47:39 2024] GET /admin/ => generated 0 bytes in 533 msecs (HTTP/1.1 302) 10 headers in 380 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+[pid: 2148|app: 0|req: 1/2] 87.49.45.114 () {44 vars in 883 bytes} [Thu Sep 19 15:47:40 2024] GET /admin/login/?next=/admin/ => generated 4160 bytes in 512 msecs (HTTP/1.1 200) 10 headers in 478 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+...brutally killing workers...
+Thu Sep 19 15:47:55 2024 - received message 0 from emperor
+worker 6 buried after 3 seconds
+worker 1 buried after 4 seconds
+worker 2 buried after 4 seconds
+worker 3 buried after 4 seconds
+worker 4 buried after 4 seconds
+worker 5 buried after 4 seconds
+worker 7 buried after 4 seconds
+worker 8 buried after 4 seconds
+worker 9 buried after 4 seconds
+worker 10 buried after 4 seconds
+binary reloading uWSGI...
+chdir() to /home/pi/git/H6_projekt/env/vassals
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock)
+running /home/pi/git/H6_projekt/env/bin/uwsgi
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from some_backend_uwsgi.ini
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 15:47:59 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x557d60fcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x557d60fcc8 pid: 2139 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 2139)
+spawned uWSGI worker 1 (pid: 2213, cores: 1)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:01 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:01 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2213)...
+spawned uWSGI worker 2 (pid: 2214, cores: 1)
+spawned uWSGI worker 3 (pid: 2215, cores: 1)
+spawned uWSGI worker 4 (pid: 2216, cores: 1)
+spawned uWSGI worker 5 (pid: 2217, cores: 1)
+spawned uWSGI worker 6 (pid: 2218, cores: 1)
+spawned uWSGI worker 7 (pid: 2219, cores: 1)
+spawned uWSGI worker 8 (pid: 2220, cores: 1)
+spawned uWSGI worker 9 (pid: 2221, cores: 1)
+spawned uWSGI worker 10 (pid: 2222, cores: 1)
+Thu Sep 19 15:48:01 2024 - SIGPIPE: writing to a closed pipe/socket/fd (probably the client disconnected) on request /admin/login/?next=/admin/ (ip 87.49.45.114) !!!
+Thu Sep 19 15:48:01 2024 - uwsgi_response_writev_headers_and_body_do(): Broken pipe [core/writer.c line 306] during GET /admin/login/?next=/admin/ (87.49.45.114)
+OSError: write error
+[pid: 2214|app: 0|req: 1/1] 87.49.45.114 () {44 vars in 883 bytes} [Thu Sep 19 15:48:01 2024] GET /admin/login/?next=/admin/ => generated 0 bytes in 713 msecs (HTTP/1.1 200) 10 headers in 0 bytes (0 switches on core 0)
+announcing my loyalty to the Emperor...
+write(): Bad file descriptor [core/utils.c line 1211]
+worker 1 killed successfully (pid: 2213)
+Respawned uWSGI worker 1 (new pid: 2223)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:02 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:02 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2223)...
+worker 1 killed successfully (pid: 2223)
+Respawned uWSGI worker 1 (new pid: 2224)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:03 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:03 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2224)...
+worker 1 killed successfully (pid: 2224)
+Respawned uWSGI worker 1 (new pid: 2225)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:04 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:04 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2225)...
+worker 1 killed successfully (pid: 2225)
+Respawned uWSGI worker 1 (new pid: 2226)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:05 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:05 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2226)...
+worker 1 killed successfully (pid: 2226)
+Respawned uWSGI worker 1 (new pid: 2227)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:06 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:06 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2227)...
+worker 1 killed successfully (pid: 2227)
+Respawned uWSGI worker 1 (new pid: 2228)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:07 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:07 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2228)...
+worker 1 killed successfully (pid: 2228)
+Respawned uWSGI worker 1 (new pid: 2229)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:08 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:08 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2229)...
+worker 1 killed successfully (pid: 2229)
+Respawned uWSGI worker 1 (new pid: 2230)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:09 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:09 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2230)...
+worker 1 killed successfully (pid: 2230)
+Respawned uWSGI worker 1 (new pid: 2231)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:10 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:10 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2231)...
+worker 1 killed successfully (pid: 2231)
+Respawned uWSGI worker 1 (new pid: 2232)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:11 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:11 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2232)...
+worker 1 killed successfully (pid: 2232)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+Respawned uWSGI worker 1 (new pid: 2233)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:14 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:14 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2233)...
+worker 1 killed successfully (pid: 2233)
+Respawned uWSGI worker 1 (new pid: 2234)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:15 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:15 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2234)...
+worker 1 killed successfully (pid: 2234)
+Respawned uWSGI worker 1 (new pid: 2235)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:16 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:16 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2235)...
+worker 1 killed successfully (pid: 2235)
+Respawned uWSGI worker 1 (new pid: 2236)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:17 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:17 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2236)...
+worker 1 killed successfully (pid: 2236)
+Respawned uWSGI worker 1 (new pid: 2237)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:18 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:18 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2237)...
+worker 1 killed successfully (pid: 2237)
+Respawned uWSGI worker 1 (new pid: 2238)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:19 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:19 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2238)...
+worker 1 killed successfully (pid: 2238)
+Respawned uWSGI worker 1 (new pid: 2239)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:20 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:20 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2239)...
+worker 1 killed successfully (pid: 2239)
+Respawned uWSGI worker 1 (new pid: 2240)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:21 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:21 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2240)...
+worker 1 killed successfully (pid: 2240)
+Respawned uWSGI worker 1 (new pid: 2241)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:22 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:22 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2241)...
+worker 1 killed successfully (pid: 2241)
+Respawned uWSGI worker 1 (new pid: 2242)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:23 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:23 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2242)...
+worker 1 killed successfully (pid: 2242)
+Respawned uWSGI worker 1 (new pid: 2243)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 15:48:24 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 15:48:24 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2243)...
+worker 1 killed successfully (pid: 2243)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 17:48:33 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x555c3efcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 4 seconds on interpreter 0x555c3efcc8 pid: 756 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 756)
+spawned uWSGI worker 1 (pid: 1156, cores: 1)
+spawned uWSGI worker 2 (pid: 1157, cores: 1)
+spawned uWSGI worker 3 (pid: 1160, cores: 1)
+spawned uWSGI worker 4 (pid: 1169, cores: 1)
+spawned uWSGI worker 5 (pid: 1173, cores: 1)
+spawned uWSGI worker 6 (pid: 1177, cores: 1)
+spawned uWSGI worker 7 (pid: 1180, cores: 1)
+spawned uWSGI worker 8 (pid: 1182, cores: 1)
+spawned uWSGI worker 9 (pid: 1184, cores: 1)
+spawned uWSGI worker 10 (pid: 1186, cores: 1)
+[pid: 1173|app: 0|req: 1/1] 87.49.45.114 () {44 vars in 883 bytes} [Thu Sep 19 15:48:40 2024] GET /admin/login/?next=/admin/ => generated 4160 bytes in 736 msecs (HTTP/1.1 200) 10 headers in 478 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+Thu Sep 19 15:51:52 2024 - received message 1 from emperor
+...gracefully killing workers...
+Gracefully killing worker 3 (pid: 1160)...
+Gracefully killing worker 9 (pid: 1184)...
+Gracefully killing worker 10 (pid: 1186)...
+Gracefully killing worker 1 (pid: 1156)...
+Gracefully killing worker 5 (pid: 1173)...
+Gracefully killing worker 8 (pid: 1182)...
+Gracefully killing worker 7 (pid: 1180)...
+Gracefully killing worker 6 (pid: 1177)...
+Gracefully killing worker 4 (pid: 1169)...
+Gracefully killing worker 2 (pid: 1157)...
+worker 3 buried after 3 seconds
+worker 9 buried after 3 seconds
+worker 10 buried after 3 seconds
+worker 1 buried after 4 seconds
+worker 2 buried after 4 seconds
+worker 4 buried after 4 seconds
+worker 5 buried after 4 seconds
+worker 6 buried after 4 seconds
+worker 7 buried after 4 seconds
+worker 8 buried after 4 seconds
+binary reloading uWSGI...
+chdir() to /home/pi/git/H6_projekt/env/vassals
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock)
+running /home/pi/git/H6_projekt/env/bin/uwsgi
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from some_backend_uwsgi.ini
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 15:51:56 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x557176fcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x557176fcc8 pid: 756 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 756)
+spawned uWSGI worker 1 (pid: 1982, cores: 1)
+spawned uWSGI worker 2 (pid: 1983, cores: 1)
+spawned uWSGI worker 3 (pid: 1984, cores: 1)
+spawned uWSGI worker 4 (pid: 1985, cores: 1)
+spawned uWSGI worker 5 (pid: 1986, cores: 1)
+spawned uWSGI worker 6 (pid: 1987, cores: 1)
+spawned uWSGI worker 7 (pid: 1988, cores: 1)
+spawned uWSGI worker 8 (pid: 1989, cores: 1)
+spawned uWSGI worker 9 (pid: 1990, cores: 1)
+spawned uWSGI worker 10 (pid: 1991, cores: 1)
+[pid: 1982|app: 0|req: 1/1] 87.49.45.114 () {44 vars in 883 bytes} [Thu Sep 19 15:51:58 2024] GET /admin/login/?next=/admin/ => generated 4160 bytes in 506 msecs (HTTP/1.1 200) 10 headers in 478 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+Thu Sep 19 15:54:31 2024 - received message 1 from emperor
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 1982)...
+Gracefully killing worker 2 (pid: 1983)...
+Gracefully killing worker 4 (pid: 1985)...
+Gracefully killing worker 6 (pid: 1987)...
+Gracefully killing worker 8 (pid: 1989)...
+Gracefully killing worker 10 (pid: 1991)...
+Gracefully killing worker 3 (pid: 1984)...
+Gracefully killing worker 5 (pid: 1986)...
+Gracefully killing worker 7 (pid: 1988)...
+Gracefully killing worker 9 (pid: 1990)...
+worker 6 buried after 3 seconds
+worker 9 buried after 3 seconds
+worker 1 buried after 4 seconds
+worker 2 buried after 4 seconds
+worker 3 buried after 4 seconds
+worker 4 buried after 4 seconds
+worker 5 buried after 4 seconds
+worker 7 buried after 4 seconds
+worker 8 buried after 4 seconds
+worker 10 buried after 4 seconds
+binary reloading uWSGI...
+chdir() to /home/pi/git/H6_projekt/env/vassals
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock)
+running /home/pi/git/H6_projekt/env/bin/uwsgi
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from some_backend_uwsgi.ini
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 15:54:36 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x55583bfcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55583bfcc8 pid: 756 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 756)
+spawned uWSGI worker 1 (pid: 2016, cores: 1)
+spawned uWSGI worker 2 (pid: 2017, cores: 1)
+spawned uWSGI worker 3 (pid: 2018, cores: 1)
+spawned uWSGI worker 4 (pid: 2019, cores: 1)
+spawned uWSGI worker 5 (pid: 2020, cores: 1)
+spawned uWSGI worker 6 (pid: 2021, cores: 1)
+spawned uWSGI worker 7 (pid: 2022, cores: 1)
+spawned uWSGI worker 8 (pid: 2023, cores: 1)
+spawned uWSGI worker 9 (pid: 2024, cores: 1)
+spawned uWSGI worker 10 (pid: 2025, cores: 1)
+[pid: 2025|app: 0|req: 1/1] 87.49.45.114 () {44 vars in 883 bytes} [Thu Sep 19 15:54:57 2024] GET /admin/login/?next=/admin/ => generated 4160 bytes in 557 msecs (HTTP/1.1 200) 10 headers in 478 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+[pid: 2025|app: 0|req: 2/2] 178.211.139.188 () {44 vars in 782 bytes} [Thu Sep 19 15:55:52 2024] GET / => generated 0 bytes in 4 msecs (HTTP/1.1 302) 8 headers in 242 bytes (2 switches on core 0)
+[pid: 2025|app: 0|req: 3/3] 87.49.45.114 () {52 vars in 1097 bytes} [Thu Sep 19 15:56:49 2024] POST /admin/login/?next=/admin/ => generated 0 bytes in 1651 msecs (HTTP/1.1 302) 13 headers in 674 bytes (2 switches on core 0)
+[pid: 2018|app: 0|req: 1/4] 87.49.45.114 () {46 vars in 952 bytes} [Thu Sep 19 15:56:51 2024] GET /admin/ => generated 8241 bytes in 530 msecs (HTTP/1.1 200) 10 headers in 478 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+[pid: 2024|app: 0|req: 1/5] 87.49.45.114 () {44 vars in 922 bytes} [Thu Sep 19 15:56:54 2024] GET /admin/auth/user/ => generated 12889 bytes in 618 msecs (HTTP/1.1 200) 10 headers in 479 bytes (2 switches on core 0)
+announcing my loyalty to the Emperor...
+[pid: 2024|app: 0|req: 2/6] 87.49.45.114 () {42 vars in 759 bytes} [Thu Sep 19 15:56:55 2024] GET /admin/jsi18n/ => generated 3342 bytes in 12 msecs (HTTP/1.1 200) 7 headers in 238 bytes (2 switches on core 0)
+[pid: 2024|app: 0|req: 3/7] 87.49.45.114 () {44 vars in 950 bytes} [Thu Sep 19 15:56:57 2024] GET /admin/auth/user/1/change/ => generated 25114 bytes in 136 msecs (HTTP/1.1 200) 10 headers in 479 bytes (2 switches on core 0)
+[pid: 2024|app: 0|req: 4/8] 87.49.45.114 () {42 vars in 768 bytes} [Thu Sep 19 15:56:57 2024] GET /admin/jsi18n/ => generated 3342 bytes in 9 msecs (HTTP/1.1 200) 7 headers in 238 bytes (2 switches on core 0)
+[pid: 2024|app: 0|req: 5/9] 87.49.45.114 () {52 vars in 1142 bytes} [Thu Sep 19 15:57:10 2024] POST /admin/auth/user/1/change/ => generated 0 bytes in 109 msecs (HTTP/1.1 302) 12 headers in 666 bytes (2 switches on core 0)
+[pid: 2024|app: 0|req: 6/10] 87.49.45.114 () {46 vars in 1190 bytes} [Thu Sep 19 15:57:10 2024] GET /admin/auth/user/ => generated 13096 bytes in 36 msecs (HTTP/1.1 200) 11 headers in 577 bytes (2 switches on core 0)
+[pid: 2024|app: 0|req: 7/11] 87.49.45.114 () {42 vars in 759 bytes} [Thu Sep 19 15:57:10 2024] GET /admin/jsi18n/ => generated 3342 bytes in 9 msecs (HTTP/1.1 200) 7 headers in 238 bytes (2 switches on core 0)
+[pid: 2024|app: 0|req: 8/12] 87.49.45.114 () {44 vars in 912 bytes} [Thu Sep 19 15:57:13 2024] GET /admin/ => generated 8617 bytes in 28 msecs (HTTP/1.1 200) 10 headers in 478 bytes (2 switches on core 0)
+[pid: 2025|app: 0|req: 4/13] 87.49.45.114 () {44 vars in 938 bytes} [Thu Sep 19 15:57:15 2024] GET /admin/base/extendeduser/ => generated 10350 bytes in 134 msecs (HTTP/1.1 200) 10 headers in 479 bytes (2 switches on core 0)
+[pid: 2025|app: 0|req: 5/14] 87.49.45.114 () {42 vars in 767 bytes} [Thu Sep 19 15:57:15 2024] GET /admin/jsi18n/ => generated 3342 bytes in 10 msecs (HTTP/1.1 200) 7 headers in 238 bytes (2 switches on core 0)
+Forbidden: /sessionGetUser
+[pid: 2023|app: 0|req: 1/15] 192.168.1.1 () {36 vars in 469 bytes} [Thu Sep 19 15:57:32 2024] GET /sessionGetUser => generated 58 bytes in 469 msecs (HTTP/1.1 403) 8 headers in 262 bytes (2 switches on core 0)
+announcing my loyalty to the Emperor...
+[pid: 2024|app: 0|req: 9/16] 87.49.45.114 () {44 vars in 974 bytes} [Thu Sep 19 15:57:33 2024] GET /admin/base/extendeduser/1/change/ => generated 11939 bytes in 42 msecs (HTTP/1.1 200) 10 headers in 479 bytes (1 switches on core 0)
+[pid: 2024|app: 0|req: 10/17] 87.49.45.114 () {42 vars in 776 bytes} [Thu Sep 19 15:57:33 2024] GET /admin/jsi18n/ => generated 3342 bytes in 9 msecs (HTTP/1.1 200) 7 headers in 238 bytes (2 switches on core 0)
+[pid: 2024|app: 0|req: 11/18] 87.49.45.114 () {52 vars in 1242 bytes} [Thu Sep 19 15:57:54 2024] POST /admin/base/extendeduser/1/change/ => generated 0 bytes in 368 msecs (HTTP/1.1 302) 12 headers in 703 bytes (2 switches on core 0)
+[pid: 2025|app: 0|req: 6/19] 87.49.45.114 () {46 vars in 1243 bytes} [Thu Sep 19 15:57:55 2024] GET /admin/base/extendeduser/ => generated 10578 bytes in 33 msecs (HTTP/1.1 200) 11 headers in 577 bytes (1 switches on core 0)
+[pid: 2025|app: 0|req: 7/20] 87.49.45.114 () {42 vars in 767 bytes} [Thu Sep 19 15:57:55 2024] GET /admin/jsi18n/ => generated 3342 bytes in 9 msecs (HTTP/1.1 200) 7 headers in 238 bytes (2 switches on core 0)
+Forbidden: /sessionGetUser
+[pid: 2025|app: 0|req: 8/21] 192.168.1.1 () {36 vars in 469 bytes} [Thu Sep 19 15:58:29 2024] GET /sessionGetUser => generated 58 bytes in 6 msecs (HTTP/1.1 403) 8 headers in 262 bytes (2 switches on core 0)
+[pid: 2024|app: 0|req: 12/22] 192.168.1.1 () {40 vars in 546 bytes} [Thu Sep 19 15:58:34 2024] POST /sessionLogin => generated 379 bytes in 3207 msecs (HTTP/1.1 200) 10 headers in 532 bytes (2 switches on core 0)
+[pid: 2024|app: 0|req: 13/23] 192.168.1.1 () {38 vars in 574 bytes} [Thu Sep 19 15:58:37 2024] GET /get_public_posts => generated 31 bytes in 12 msecs (HTTP/1.1 200) 8 headers in 249 bytes (2 switches on core 0)
+Not Found: /ws/socket-server/
+[pid: 2024|app: 0|req: 14/24] 192.168.1.1 () {46 vars in 718 bytes} [Thu Sep 19 15:58:37 2024] GET /ws/socket-server/ => generated 8060 bytes in 16 msecs (HTTP/1.1 404) 8 headers in 261 bytes (2 switches on core 0)
+[pid: 2025|app: 0|req: 9/25] 192.168.1.1 () {40 vars in 546 bytes} [Thu Sep 19 15:58:50 2024] POST /sessionLogin => generated 379 bytes in 3189 msecs (HTTP/1.1 200) 10 headers in 532 bytes (2 switches on core 0)
+Not Found: /ws/socket-server/
+[pid: 2023|app: 0|req: 2/26] 192.168.1.1 () {46 vars in 718 bytes} [Thu Sep 19 15:58:54 2024] GET /ws/socket-server/ => generated 8060 bytes in 29 msecs (HTTP/1.1 404) 8 headers in 261 bytes (1 switches on core 0)
+[pid: 2021|app: 0|req: 1/27] 192.168.1.1 () {38 vars in 574 bytes} [Thu Sep 19 15:58:54 2024] GET /get_public_posts => generated 31 bytes in 434 msecs (HTTP/1.1 200) 8 headers in 249 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+[pid: 2023|app: 0|req: 3/28] 192.168.1.1 () {42 vars in 647 bytes} [Thu Sep 19 15:59:42 2024] POST /sessionLogin => generated 379 bytes in 3224 msecs (HTTP/1.1 200) 10 headers in 532 bytes (2 switches on core 0)
+[pid: 2025|app: 0|req: 10/29] 192.168.1.1 () {38 vars in 574 bytes} [Thu Sep 19 15:59:45 2024] GET /get_public_posts => generated 31 bytes in 11 msecs (HTTP/1.1 200) 8 headers in 249 bytes (2 switches on core 0)
+Not Found: /ws/socket-server/
+[pid: 2021|app: 0|req: 2/30] 192.168.1.1 () {46 vars in 718 bytes} [Thu Sep 19 15:59:45 2024] GET /ws/socket-server/ => generated 8060 bytes in 23 msecs (HTTP/1.1 404) 8 headers in 261 bytes (2 switches on core 0)
+[pid: 2025|app: 0|req: 11/31] 192.168.1.1 () {42 vars in 647 bytes} [Thu Sep 19 16:00:00 2024] POST /sessionLogin => generated 379 bytes in 3207 msecs (HTTP/1.1 200) 10 headers in 532 bytes (2 switches on core 0)
+[pid: 2025|app: 0|req: 12/32] 192.168.1.1 () {38 vars in 574 bytes} [Thu Sep 19 16:00:04 2024] GET /get_public_posts => generated 31 bytes in 9 msecs (HTTP/1.1 200) 8 headers in 249 bytes (2 switches on core 0)
+Not Found: /ws/socket-server/
+[pid: 2025|app: 0|req: 13/33] 192.168.1.1 () {46 vars in 718 bytes} [Thu Sep 19 16:00:04 2024] GET /ws/socket-server/ => generated 8060 bytes in 18 msecs (HTTP/1.1 404) 8 headers in 261 bytes (2 switches on core 0)
+Thu Sep 19 16:03:42 2024 - received message 1 from emperor
+...gracefully killing workers...
+Gracefully killing worker 4 (pid: 2019)...
+Gracefully killing worker 7 (pid: 2022)...
+Gracefully killing worker 2 (pid: 2017)...
+Gracefully killing worker 6 (pid: 2021)...
+Gracefully killing worker 9 (pid: 2024)...
+Gracefully killing worker 3 (pid: 2018)...
+Gracefully killing worker 5 (pid: 2020)...
+Gracefully killing worker 10 (pid: 2025)...
+Gracefully killing worker 8 (pid: 2023)...
+Gracefully killing worker 1 (pid: 2016)...
+worker 1 buried after 3 seconds
+worker 5 buried after 3 seconds
+worker 6 buried after 3 seconds
+worker 2 buried after 4 seconds
+worker 3 buried after 4 seconds
+worker 4 buried after 4 seconds
+worker 7 buried after 4 seconds
+worker 8 buried after 4 seconds
+worker 9 buried after 4 seconds
+worker 10 buried after 4 seconds
+binary reloading uWSGI...
+chdir() to /home/pi/git/H6_projekt/env/vassals
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock)
+running /home/pi/git/H6_projekt/env/bin/uwsgi
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from some_backend_uwsgi.ini
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 16:03:46 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x556af0fcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend/asgi.py", line 16, in <module>
+    import API.routing
+  File "/home/pi/git/H6_projekt/SoMe_backend/API/routing.py", line 2, in <module>
+    from . import consumers
+  File "/home/pi/git/H6_projekt/SoMe_backend/API/consumers.py", line 2, in <module>
+    from django.contrib.auth.models import User
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/contrib/auth/models.py", line 5, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/contrib/auth/base_user.py", line 40, in <module>
+    class AbstractBaseUser(models.Model):
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/db/models/base.py", line 129, in __new__
+    app_config = apps.get_containing_app_config(module)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/apps/registry.py", line 260, in get_containing_app_config
+    self.check_apps_ready()
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 756)
+spawned uWSGI worker 1 (pid: 2056, cores: 1)
+spawned uWSGI worker 2 (pid: 2057, cores: 1)
+spawned uWSGI worker 3 (pid: 2058, cores: 1)
+spawned uWSGI worker 4 (pid: 2059, cores: 1)
+spawned uWSGI worker 5 (pid: 2060, cores: 1)
+spawned uWSGI worker 6 (pid: 2061, cores: 1)
+spawned uWSGI worker 7 (pid: 2062, cores: 1)
+spawned uWSGI worker 8 (pid: 2063, cores: 1)
+spawned uWSGI worker 9 (pid: 2064, cores: 1)
+spawned uWSGI worker 10 (pid: 2065, cores: 1)
+...brutally killing workers...
+Thu Sep 19 16:03:54 2024 - received message 0 from emperor
+worker 2 buried after 1 seconds
+worker 8 buried after 1 seconds
+worker 1 buried after 2 seconds
+worker 3 buried after 2 seconds
+worker 4 buried after 2 seconds
+worker 5 buried after 2 seconds
+worker 6 buried after 2 seconds
+worker 7 buried after 2 seconds
+worker 9 buried after 2 seconds
+worker 10 buried after 2 seconds
+binary reloading uWSGI...
+chdir() to /home/pi/git/H6_projekt/env/vassals
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock)
+running /home/pi/git/H6_projekt/env/bin/uwsgi
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from some_backend_uwsgi.ini
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 16:03:56 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x556c76fcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend/asgi.py", line 16, in <module>
+    import API.routing
+  File "/home/pi/git/H6_projekt/SoMe_backend/API/routing.py", line 2, in <module>
+    from . import consumers
+  File "/home/pi/git/H6_projekt/SoMe_backend/API/consumers.py", line 2, in <module>
+    from django.contrib.auth.models import User
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/contrib/auth/models.py", line 5, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/contrib/auth/base_user.py", line 40, in <module>
+    class AbstractBaseUser(models.Model):
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/db/models/base.py", line 129, in __new__
+    app_config = apps.get_containing_app_config(module)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/apps/registry.py", line 260, in get_containing_app_config
+    self.check_apps_ready()
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 756)
+spawned uWSGI worker 1 (pid: 2138, cores: 1)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:03:57 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:03:57 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2138)...
+spawned uWSGI worker 2 (pid: 2139, cores: 1)
+spawned uWSGI worker 3 (pid: 2140, cores: 1)
+spawned uWSGI worker 4 (pid: 2141, cores: 1)
+spawned uWSGI worker 5 (pid: 2142, cores: 1)
+spawned uWSGI worker 6 (pid: 2143, cores: 1)
+spawned uWSGI worker 7 (pid: 2144, cores: 1)
+spawned uWSGI worker 8 (pid: 2145, cores: 1)
+spawned uWSGI worker 9 (pid: 2146, cores: 1)
+spawned uWSGI worker 10 (pid: 2147, cores: 1)
+worker 1 killed successfully (pid: 2138)
+Respawned uWSGI worker 1 (new pid: 2148)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:03:58 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:03:58 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2148)...
+worker 1 killed successfully (pid: 2148)
+Respawned uWSGI worker 1 (new pid: 2149)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:03:59 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:03:59 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2149)...
+worker 1 killed successfully (pid: 2149)
+Respawned uWSGI worker 1 (new pid: 2150)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:00 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:00 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2150)...
+worker 1 killed successfully (pid: 2150)
+Respawned uWSGI worker 1 (new pid: 2151)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:01 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:01 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2151)...
+worker 1 killed successfully (pid: 2151)
+Respawned uWSGI worker 1 (new pid: 2152)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:02 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:02 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2152)...
+worker 1 killed successfully (pid: 2152)
+Respawned uWSGI worker 1 (new pid: 2153)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:03 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:03 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2153)...
+worker 1 killed successfully (pid: 2153)
+Respawned uWSGI worker 1 (new pid: 2154)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:04 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:04 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2154)...
+worker 1 killed successfully (pid: 2154)
+Respawned uWSGI worker 1 (new pid: 2155)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:05 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:05 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2155)...
+worker 1 killed successfully (pid: 2155)
+Respawned uWSGI worker 1 (new pid: 2156)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:06 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:06 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2156)...
+worker 1 killed successfully (pid: 2156)
+Respawned uWSGI worker 1 (new pid: 2157)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:07 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:07 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2157)...
+worker 1 killed successfully (pid: 2157)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+Respawned uWSGI worker 1 (new pid: 2158)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:10 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:10 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2158)...
+worker 1 killed successfully (pid: 2158)
+Respawned uWSGI worker 1 (new pid: 2159)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:11 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:11 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2159)...
+worker 1 killed successfully (pid: 2159)
+Respawned uWSGI worker 1 (new pid: 2160)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:12 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:12 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2160)...
+worker 1 killed successfully (pid: 2160)
+Respawned uWSGI worker 1 (new pid: 2161)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:13 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:13 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2161)...
+worker 1 killed successfully (pid: 2161)
+Respawned uWSGI worker 1 (new pid: 2162)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:14 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:14 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2162)...
+worker 1 killed successfully (pid: 2162)
+Respawned uWSGI worker 1 (new pid: 2163)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:15 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:15 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2163)...
+worker 1 killed successfully (pid: 2163)
+Respawned uWSGI worker 1 (new pid: 2164)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:16 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:16 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2164)...
+worker 1 killed successfully (pid: 2164)
+Respawned uWSGI worker 1 (new pid: 2165)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:17 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:17 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2165)...
+worker 1 killed successfully (pid: 2165)
+Respawned uWSGI worker 1 (new pid: 2166)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:18 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:18 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2166)...
+worker 1 killed successfully (pid: 2166)
+Respawned uWSGI worker 1 (new pid: 2167)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:19 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:19 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2167)...
+worker 1 killed successfully (pid: 2167)
+Respawned uWSGI worker 1 (new pid: 2168)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:20 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:20 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2168)...
+worker 1 killed successfully (pid: 2168)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+Respawned uWSGI worker 1 (new pid: 2169)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:23 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:23 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2169)...
+worker 1 killed successfully (pid: 2169)
+Respawned uWSGI worker 1 (new pid: 2170)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:04:24 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:04:24 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2170)...
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 18:04:30 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x55929afcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend/asgi.py", line 16, in <module>
+    import API.routing
+  File "/home/pi/git/H6_projekt/SoMe_backend/API/routing.py", line 2, in <module>
+    from . import consumers
+  File "/home/pi/git/H6_projekt/SoMe_backend/API/consumers.py", line 2, in <module>
+    from django.contrib.auth.models import User
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/contrib/auth/models.py", line 5, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/contrib/auth/base_user.py", line 40, in <module>
+    class AbstractBaseUser(models.Model):
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/db/models/base.py", line 129, in __new__
+    app_config = apps.get_containing_app_config(module)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/apps/registry.py", line 260, in get_containing_app_config
+    self.check_apps_ready()
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/apps/registry.py", line 137, in check_apps_ready
+    settings.INSTALLED_APPS
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/conf/__init__.py", line 81, in __getattr__
+    self._setup(name)
+  File "/home/pi/git/H6_projekt/env/lib/python3.12/site-packages/django/conf/__init__.py", line 61, in _setup
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 743)
+spawned uWSGI worker 1 (pid: 1112, cores: 1)
+spawned uWSGI worker 2 (pid: 1113, cores: 1)
+spawned uWSGI worker 3 (pid: 1114, cores: 1)
+spawned uWSGI worker 4 (pid: 1115, cores: 1)
+spawned uWSGI worker 5 (pid: 1116, cores: 1)
+spawned uWSGI worker 6 (pid: 1117, cores: 1)
+spawned uWSGI worker 7 (pid: 1118, cores: 1)
+spawned uWSGI worker 8 (pid: 1119, cores: 1)
+spawned uWSGI worker 9 (pid: 1120, cores: 1)
+spawned uWSGI worker 10 (pid: 1121, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 1115|app: -1|req: -1/1] 192.168.1.1 () {46 vars in 995 bytes} [Thu Sep 19 18:04:38 2024] GET /admin/base/extendeduser/ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+announcing my loyalty to the Emperor...
+--- no python application found, check your startup logs for errors ---
+[pid: 1115|app: -1|req: -1/2] 192.168.1.1 () {46 vars in 995 bytes} [Thu Sep 19 18:07:12 2024] GET /admin/base/extendeduser/ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 1119|app: -1|req: -1/3] 45.148.10.242 () {30 vars in 386 bytes} [Thu Sep 19 18:07:39 2024] GET /cgi-bin/luci/;stok=/locale => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+announcing my loyalty to the Emperor...
+--- no python application found, check your startup logs for errors ---
+[pid: 1121|app: -1|req: -1/4] 192.168.1.1 () {46 vars in 995 bytes} [Thu Sep 19 18:07:44 2024] GET /admin/base/extendeduser/ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+announcing my loyalty to the Emperor...
+Thu Sep 19 18:16:02 2024 - received message 1 from emperor
+...gracefully killing workers...
+Gracefully killing worker 10 (pid: 1121)...
+Gracefully killing worker 1 (pid: 1112)...
+Gracefully killing worker 3 (pid: 1114)...
+Gracefully killing worker 2 (pid: 1113)...
+Gracefully killing worker 4 (pid: 1115)...
+Gracefully killing worker 6 (pid: 1117)...
+Gracefully killing worker 7 (pid: 1118)...
+Gracefully killing worker 5 (pid: 1116)...
+Gracefully killing worker 9 (pid: 1120)...
+Gracefully killing worker 8 (pid: 1119)...
+worker 1 buried after 2 seconds
+worker 2 buried after 2 seconds
+worker 3 buried after 2 seconds
+worker 4 buried after 2 seconds
+worker 5 buried after 2 seconds
+worker 6 buried after 2 seconds
+worker 7 buried after 2 seconds
+worker 8 buried after 2 seconds
+worker 9 buried after 2 seconds
+worker 10 buried after 2 seconds
+binary reloading uWSGI...
+chdir() to /home/pi/git/H6_projekt/env/vassals
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock)
+running /home/pi/git/H6_projekt/env/bin/uwsgi
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from some_backend_uwsgi.ini
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 18:16:04 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x558acdfcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x558acdfcc8 pid: 743 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 743)
+spawned uWSGI worker 1 (pid: 2038, cores: 1)
+spawned uWSGI worker 2 (pid: 2039, cores: 1)
+spawned uWSGI worker 3 (pid: 2040, cores: 1)
+spawned uWSGI worker 4 (pid: 2041, cores: 1)
+spawned uWSGI worker 5 (pid: 2042, cores: 1)
+spawned uWSGI worker 6 (pid: 2043, cores: 1)
+spawned uWSGI worker 7 (pid: 2044, cores: 1)
+spawned uWSGI worker 8 (pid: 2045, cores: 1)
+spawned uWSGI worker 9 (pid: 2046, cores: 1)
+spawned uWSGI worker 10 (pid: 2047, cores: 1)
+Thu Sep 19 16:16:09 2024 - received message 1 from emperor
+...gracefully killing workers...
+Gracefully killing worker 3 (pid: 2040)...
+Gracefully killing worker 2 (pid: 2039)...
+Gracefully killing worker 5 (pid: 2042)...
+Gracefully killing worker 1 (pid: 2038)...
+Gracefully killing worker 7 (pid: 2044)...
+Gracefully killing worker 4 (pid: 2041)...
+Gracefully killing worker 6 (pid: 2043)...
+Gracefully killing worker 9 (pid: 2046)...
+Gracefully killing worker 8 (pid: 2045)...
+Gracefully killing worker 10 (pid: 2047)...
+worker 1 buried after 3 seconds
+worker 3 buried after 3 seconds
+worker 7 buried after 3 seconds
+worker 9 buried after 3 seconds
+worker 2 buried after 4 seconds
+worker 4 buried after 4 seconds
+worker 5 buried after 4 seconds
+worker 6 buried after 4 seconds
+worker 8 buried after 4 seconds
+worker 10 buried after 4 seconds
+binary reloading uWSGI...
+chdir() to /home/pi/git/H6_projekt/env/vassals
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock)
+running /home/pi/git/H6_projekt/env/bin/uwsgi
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from some_backend_uwsgi.ini
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 16:16:13 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x558663fcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x558663fcc8 pid: 743 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 743)
+spawned uWSGI worker 1 (pid: 2051, cores: 1)
+spawned uWSGI worker 2 (pid: 2052, cores: 1)
+spawned uWSGI worker 3 (pid: 2053, cores: 1)
+spawned uWSGI worker 4 (pid: 2054, cores: 1)
+spawned uWSGI worker 5 (pid: 2055, cores: 1)
+spawned uWSGI worker 6 (pid: 2056, cores: 1)
+spawned uWSGI worker 7 (pid: 2057, cores: 1)
+spawned uWSGI worker 8 (pid: 2058, cores: 1)
+spawned uWSGI worker 9 (pid: 2059, cores: 1)
+spawned uWSGI worker 10 (pid: 2060, cores: 1)
+...brutally killing workers...
+Thu Sep 19 16:16:18 2024 - received message 0 from emperor
+worker 6 buried after 3 seconds
+worker 1 buried after 4 seconds
+worker 2 buried after 4 seconds
+worker 3 buried after 4 seconds
+worker 4 buried after 4 seconds
+worker 5 buried after 4 seconds
+worker 7 buried after 4 seconds
+worker 8 buried after 4 seconds
+worker 9 buried after 4 seconds
+worker 10 buried after 4 seconds
+binary reloading uWSGI...
+chdir() to /home/pi/git/H6_projekt/env/vassals
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock)
+running /home/pi/git/H6_projekt/env/bin/uwsgi
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from some_backend_uwsgi.ini
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 16:16:22 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x555d84fcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x555d84fcc8 pid: 743 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 743)
+spawned uWSGI worker 1 (pid: 2093, cores: 1)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:24 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:24 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2093)...
+spawned uWSGI worker 2 (pid: 2094, cores: 1)
+spawned uWSGI worker 3 (pid: 2095, cores: 1)
+spawned uWSGI worker 4 (pid: 2096, cores: 1)
+spawned uWSGI worker 5 (pid: 2097, cores: 1)
+spawned uWSGI worker 6 (pid: 2098, cores: 1)
+spawned uWSGI worker 7 (pid: 2099, cores: 1)
+spawned uWSGI worker 8 (pid: 2100, cores: 1)
+spawned uWSGI worker 9 (pid: 2101, cores: 1)
+spawned uWSGI worker 10 (pid: 2102, cores: 1)
+worker 1 killed successfully (pid: 2093)
+Respawned uWSGI worker 1 (new pid: 2103)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:25 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:25 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2103)...
+worker 1 killed successfully (pid: 2103)
+Respawned uWSGI worker 1 (new pid: 2104)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:26 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:26 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2104)...
+worker 1 killed successfully (pid: 2104)
+Respawned uWSGI worker 1 (new pid: 2105)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:27 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:27 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2105)...
+worker 1 killed successfully (pid: 2105)
+Respawned uWSGI worker 1 (new pid: 2106)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:28 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:28 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2106)...
+worker 1 killed successfully (pid: 2106)
+Respawned uWSGI worker 1 (new pid: 2107)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:29 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:29 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2107)...
+worker 1 killed successfully (pid: 2107)
+Respawned uWSGI worker 1 (new pid: 2108)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:30 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:30 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2108)...
+worker 1 killed successfully (pid: 2108)
+Respawned uWSGI worker 1 (new pid: 2109)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:31 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:31 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2109)...
+worker 1 killed successfully (pid: 2109)
+Respawned uWSGI worker 1 (new pid: 2110)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:32 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:32 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2110)...
+worker 1 killed successfully (pid: 2110)
+Respawned uWSGI worker 1 (new pid: 2111)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:33 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:33 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2111)...
+worker 1 killed successfully (pid: 2111)
+Respawned uWSGI worker 1 (new pid: 2112)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:34 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:34 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2112)...
+worker 1 killed successfully (pid: 2112)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+Respawned uWSGI worker 1 (new pid: 2113)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:37 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:37 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2113)...
+worker 1 killed successfully (pid: 2113)
+Respawned uWSGI worker 1 (new pid: 2114)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:38 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:38 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2114)...
+worker 1 killed successfully (pid: 2114)
+Respawned uWSGI worker 1 (new pid: 2115)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:39 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:39 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2115)...
+worker 1 killed successfully (pid: 2115)
+Respawned uWSGI worker 1 (new pid: 2116)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:40 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:40 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2116)...
+worker 1 killed successfully (pid: 2116)
+Respawned uWSGI worker 1 (new pid: 2117)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:41 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:41 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2117)...
+worker 1 killed successfully (pid: 2117)
+Respawned uWSGI worker 1 (new pid: 2118)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:42 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:42 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2118)...
+worker 1 killed successfully (pid: 2118)
+Respawned uWSGI worker 1 (new pid: 2120)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:43 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:43 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2120)...
+worker 1 killed successfully (pid: 2120)
+Respawned uWSGI worker 1 (new pid: 2121)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:44 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:44 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2121)...
+worker 1 killed successfully (pid: 2121)
+Respawned uWSGI worker 1 (new pid: 2122)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:45 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:45 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2122)...
+worker 1 killed successfully (pid: 2122)
+Respawned uWSGI worker 1 (new pid: 2123)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:46 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:46 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2123)...
+worker 1 killed successfully (pid: 2123)
+Respawned uWSGI worker 1 (new pid: 2124)
+emperor-i-am-ready-to-accept/write(): Bad file descriptor [core/uwsgi.c line 3549]
+Thu Sep 19 16:16:47 2024 - lost communication with the Emperor, goodbye...
+Thu Sep 19 16:16:47 2024 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 2124)...
+worker 1 killed successfully (pid: 2124)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 18:16:51 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x55798dfcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55798dfcc8 pid: 2126 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2126)
+spawned uWSGI worker 1 (pid: 2127, cores: 1)
+spawned uWSGI worker 2 (pid: 2128, cores: 1)
+spawned uWSGI worker 3 (pid: 2129, cores: 1)
+spawned uWSGI worker 4 (pid: 2130, cores: 1)
+spawned uWSGI worker 5 (pid: 2131, cores: 1)
+spawned uWSGI worker 6 (pid: 2132, cores: 1)
+spawned uWSGI worker 7 (pid: 2133, cores: 1)
+spawned uWSGI worker 8 (pid: 2134, cores: 1)
+spawned uWSGI worker 9 (pid: 2135, cores: 1)
+spawned uWSGI worker 10 (pid: 2136, cores: 1)
+[pid: 2136|app: 0|req: 1/1] 149.50.103.48 () {28 vars in 310 bytes} [Thu Sep 19 16:35:07 2024] GET / => generated 0 bytes in 542 msecs (HTTP/1.1 302) 8 headers in 242 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+Thu Sep 19 16:37:05 2024 - received message 1 from emperor
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 2128)...
+Gracefully killing worker 3 (pid: 2129)...
+Gracefully killing worker 10 (pid: 2136)...
+Gracefully killing worker 4 (pid: 2130)...
+Gracefully killing worker 6 (pid: 2132)...
+Gracefully killing worker 5 (pid: 2131)...
+Gracefully killing worker 8 (pid: 2134)...
+Gracefully killing worker 7 (pid: 2133)...
+Gracefully killing worker 1 (pid: 2127)...
+Gracefully killing worker 9 (pid: 2135)...
+worker 2 buried after 3 seconds
+worker 6 buried after 3 seconds
+worker 1 buried after 4 seconds
+worker 3 buried after 4 seconds
+worker 4 buried after 4 seconds
+worker 5 buried after 4 seconds
+worker 7 buried after 4 seconds
+worker 8 buried after 4 seconds
+worker 9 buried after 4 seconds
+worker 10 buried after 4 seconds
+binary reloading uWSGI...
+chdir() to /home/pi/git/H6_projekt/env/vassals
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock)
+running /home/pi/git/H6_projekt/env/bin/uwsgi
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from some_backend_uwsgi.ini
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 16:37:09 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x5592e8fcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5592e8fcc8 pid: 2126 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 2126)
+spawned uWSGI worker 1 (pid: 2518, cores: 1)
+spawned uWSGI worker 2 (pid: 2519, cores: 1)
+spawned uWSGI worker 3 (pid: 2520, cores: 1)
+spawned uWSGI worker 4 (pid: 2521, cores: 1)
+spawned uWSGI worker 5 (pid: 2522, cores: 1)
+spawned uWSGI worker 6 (pid: 2523, cores: 1)
+spawned uWSGI worker 7 (pid: 2524, cores: 1)
+spawned uWSGI worker 8 (pid: 2525, cores: 1)
+spawned uWSGI worker 9 (pid: 2526, cores: 1)
+spawned uWSGI worker 10 (pid: 2527, cores: 1)
+Thu Sep 19 16:44:11 2024 - received message 1 from emperor
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 2519)...
+Gracefully killing worker 1 (pid: 2518)...
+Gracefully killing worker 3 (pid: 2520)...
+Gracefully killing worker 4 (pid: 2521)...
+Gracefully killing worker 6 (pid: 2523)...
+Gracefully killing worker 5 (pid: 2522)...
+Gracefully killing worker 8 (pid: 2525)...
+Gracefully killing worker 9 (pid: 2526)...
+Gracefully killing worker 10 (pid: 2527)...
+Gracefully killing worker 7 (pid: 2524)...
+worker 2 buried after 3 seconds
+worker 3 buried after 3 seconds
+worker 1 buried after 4 seconds
+worker 4 buried after 4 seconds
+worker 5 buried after 4 seconds
+worker 6 buried after 4 seconds
+worker 7 buried after 4 seconds
+worker 8 buried after 4 seconds
+worker 9 buried after 4 seconds
+worker 10 buried after 4 seconds
+binary reloading uWSGI...
+chdir() to /home/pi/git/H6_projekt/env/vassals
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock)
+running /home/pi/git/H6_projekt/env/bin/uwsgi
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from some_backend_uwsgi.ini
+*** Starting uWSGI 2.0.26 (64bit) on [Thu Sep 19 16:44:15 2024] ***
+compiled with version: 12.2.0 on 19 September 2024 14:39:41
+os: Linux-6.6.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02)
+nodename: rasmuspi
+machine: aarch64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/pi/git/H6_projekt/env/vassals
+detected binary path: /home/pi/git/H6_projekt/env/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/pi/git/H6_projekt/SoMe_backend/
+your processes number limit is 29100
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/pi/git/H6_projekt/SoMe_backend/SoMe_backend.sock fd 3
+Python version: 3.12.6 (main, Sep 19 2024, 16:34:59) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/pi/git/H6_projekt/env
+Set PythonHome to /home/pi/git/H6_projekt/env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x557b7efcc8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x557b7efcc8 pid: 2126 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 2126)
+spawned uWSGI worker 1 (pid: 2541, cores: 1)
+spawned uWSGI worker 2 (pid: 2542, cores: 1)
+spawned uWSGI worker 3 (pid: 2543, cores: 1)
+spawned uWSGI worker 4 (pid: 2544, cores: 1)
+spawned uWSGI worker 5 (pid: 2545, cores: 1)
+spawned uWSGI worker 6 (pid: 2546, cores: 1)
+spawned uWSGI worker 7 (pid: 2547, cores: 1)
+spawned uWSGI worker 8 (pid: 2548, cores: 1)
+spawned uWSGI worker 9 (pid: 2549, cores: 1)
+spawned uWSGI worker 10 (pid: 2550, cores: 1)
+[pid: 2547|app: 0|req: 1/1] 185.16.39.118 () {44 vars in 780 bytes} [Thu Sep 19 16:44:43 2024] GET / => generated 0 bytes in 521 msecs (HTTP/1.1 302) 8 headers in 242 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+[pid: 2541|app: 0|req: 1/2] 192.168.1.1 () {38 vars in 570 bytes} [Thu Sep 19 16:49:41 2024] GET /sessionGetUser => generated 360 bytes in 508 msecs (HTTP/1.1 200) 8 headers in 256 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+[pid: 2549|app: 0|req: 1/3] 192.168.1.1 () {40 vars in 625 bytes} [Thu Sep 19 16:49:46 2024] GET /sessionGetUser => generated 360 bytes in 444 msecs (HTTP/1.1 200) 8 headers in 256 bytes (2 switches on core 0)
+announcing my loyalty to the Emperor...
+[pid: 2549|app: 0|req: 2/4] 192.168.1.1 () {40 vars in 625 bytes} [Thu Sep 19 16:49:50 2024] GET /sessionGetUser => generated 360 bytes in 38 msecs (HTTP/1.1 200) 8 headers in 256 bytes (2 switches on core 0)
+[pid: 2549|app: 0|req: 3/5] 192.168.1.1 () {40 vars in 754 bytes} [Thu Sep 19 16:50:38 2024] GET / => generated 0 bytes in 3 msecs (HTTP/1.1 302) 8 headers in 242 bytes (1 switches on core 0)
+[pid: 2549|app: 0|req: 4/6] 192.168.1.1 () {40 vars in 768 bytes} [Thu Sep 19 16:50:38 2024] GET /swagger => generated 0 bytes in 55 msecs (HTTP/1.1 301) 6 headers in 213 bytes (2 switches on core 0)
+[pid: 2549|app: 0|req: 5/7] 192.168.1.1 () {40 vars in 770 bytes} [Thu Sep 19 16:50:38 2024] GET /swagger/ => generated 2166 bytes in 72 msecs (HTTP/1.1 200) 9 headers in 401 bytes (1 switches on core 0)
+[pid: 2550|app: 0|req: 1/8] 192.168.1.1 () {44 vars in 835 bytes} [Thu Sep 19 16:50:38 2024] GET /swagger/?format=openapi => generated 4147 bytes in 432 msecs (HTTP/1.1 200) 8 headers in 280 bytes (2 switches on core 0)
+announcing my loyalty to the Emperor...
+[pid: 2550|app: 0|req: 2/9] 44.196.175.104 () {36 vars in 490 bytes} [Thu Sep 19 16:50:39 2024] GET /swagger/?format=openapi => generated 4147 bytes in 22 msecs (HTTP/1.1 200) 8 headers in 280 bytes (2 switches on core 0)
+[pid: 2550|app: 0|req: 3/10] 192.168.1.1 () {42 vars in 821 bytes} [Thu Sep 19 16:50:41 2024] GET /admin => generated 0 bytes in 21 msecs (HTTP/1.1 301) 6 headers in 211 bytes (2 switches on core 0)
+[pid: 2550|app: 0|req: 4/11] 192.168.1.1 () {42 vars in 823 bytes} [Thu Sep 19 16:50:41 2024] GET /admin/ => generated 0 bytes in 29 msecs (HTTP/1.1 302) 10 headers in 380 bytes (2 switches on core 0)
+[pid: 2550|app: 0|req: 5/12] 192.168.1.1 () {42 vars in 860 bytes} [Thu Sep 19 16:50:41 2024] GET /admin/login/?next=/admin/ => generated 4160 bytes in 63 msecs (HTTP/1.1 200) 10 headers in 478 bytes (2 switches on core 0)
+Not Found: /favicon.ico
+[pid: 2550|app: 0|req: 6/13] 192.168.1.1 () {42 vars in 789 bytes} [Thu Sep 19 16:50:41 2024] GET /favicon.ico => generated 8042 bytes in 19 msecs (HTTP/1.1 404) 7 headers in 229 bytes (2 switches on core 0)
+[pid: 2550|app: 0|req: 7/14] 192.168.1.1 () {52 vars in 1105 bytes} [Thu Sep 19 16:50:46 2024] POST /admin/login/?next=/admin/ => generated 0 bytes in 1640 msecs (HTTP/1.1 302) 13 headers in 674 bytes (2 switches on core 0)
+[pid: 2550|app: 0|req: 8/15] 192.168.1.1 () {46 vars in 960 bytes} [Thu Sep 19 16:50:47 2024] GET /admin/ => generated 8994 bytes in 43 msecs (HTTP/1.1 200) 10 headers in 478 bytes (2 switches on core 0)
+[pid: 2550|app: 0|req: 9/16] 192.168.1.1 () {40 vars in 625 bytes} [Thu Sep 19 16:50:59 2024] GET /sessionGetUser => generated 360 bytes in 48 msecs (HTTP/1.1 200) 8 headers in 256 bytes (2 switches on core 0)
+[pid: 2550|app: 0|req: 10/17] 192.168.1.1 () {46 vars in 995 bytes} [Thu Sep 19 16:51:03 2024] GET /admin/base/extendeduser/ => generated 10350 bytes in 128 msecs (HTTP/1.1 200) 10 headers in 479 bytes (1 switches on core 0)
+[pid: 2550|app: 0|req: 11/18] 192.168.1.1 () {42 vars in 766 bytes} [Thu Sep 19 16:51:03 2024] GET /admin/jsi18n/ => generated 3342 bytes in 11 msecs (HTTP/1.1 200) 7 headers in 238 bytes (2 switches on core 0)
+[pid: 2550|app: 0|req: 12/19] 192.168.1.1 () {38 vars in 570 bytes} [Thu Sep 19 16:51:10 2024] GET /sessionGetUser => generated 360 bytes in 42 msecs (HTTP/1.1 200) 8 headers in 256 bytes (2 switches on core 0)
+[pid: 2550|app: 0|req: 13/20] 192.168.1.1 () {42 vars in 647 bytes} [Thu Sep 19 16:51:15 2024] POST /sessionLogin => generated 379 bytes in 3194 msecs (HTTP/1.1 200) 10 headers in 532 bytes (2 switches on core 0)
+[pid: 2550|app: 0|req: 14/21] 192.168.1.1 () {38 vars in 574 bytes} [Thu Sep 19 16:51:18 2024] GET /get_public_posts => generated 31 bytes in 10 msecs (HTTP/1.1 200) 8 headers in 249 bytes (2 switches on core 0)
+[pid: 2549|app: 0|req: 6/22] 192.168.1.1 () {42 vars in 647 bytes} [Thu Sep 19 16:52:55 2024] POST /sessionLogin => generated 379 bytes in 3210 msecs (HTTP/1.1 200) 10 headers in 532 bytes (2 switches on core 0)
+[pid: 2550|app: 0|req: 15/23] 192.168.1.1 () {38 vars in 574 bytes} [Thu Sep 19 16:52:58 2024] GET /get_public_posts => generated 31 bytes in 12 msecs (HTTP/1.1 200) 8 headers in 249 bytes (1 switches on core 0)
+Bad Request: /signup
+[pid: 2550|app: 0|req: 16/24] 192.168.1.1 () {42 vars in 637 bytes} [Thu Sep 19 16:53:41 2024] POST /signup => generated 44 bytes in 21 msecs (HTTP/1.1 400) 8 headers in 251 bytes (1 switches on core 0)
+Bad Request: /signup
+[pid: 2550|app: 0|req: 17/25] 192.168.1.1 () {42 vars in 637 bytes} [Thu Sep 19 16:54:56 2024] POST /signup => generated 44 bytes in 19 msecs (HTTP/1.1 400) 8 headers in 251 bytes (1 switches on core 0)
