@@ -12,7 +12,7 @@ class ExtendedUserSerializer(ModelSerializer):
 class UserSerializer(ModelSerializer):
     is_online = SerializerMethodField()
     friends = SerializerMethodField()
-    extendeduser = ExtendedUserSerializer()
+    extendeduser = ExtendedUserSerializer(required=False)
 
     def get_is_online(self, obj):
         try:

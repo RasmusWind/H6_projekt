@@ -27,6 +27,7 @@ export default function Login() {
         password: password,
       })
       .then((response) => {
+        console.log(response.data);
         if (response.data.status == "success") {
           dataContext.setUser(response.data.user);
           dataContext.setToken(response.data.token);
