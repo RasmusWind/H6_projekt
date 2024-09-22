@@ -66,11 +66,9 @@ export default function SignUp({ setSignUp }) {
         email: email,
       })
       .then((response) => {
-        console.log("SIGNUP success", response);
         setSignUp(false);
       })
       .catch((error) => {
-        console.log("SIGNUP error", error);
         let response = error.response.data;
         if (response.status == "error") {
           // TODO, handle error

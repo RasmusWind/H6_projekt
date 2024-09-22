@@ -11,6 +11,7 @@ urlpatterns = [
 
     path('search_users', endpoints.search_users),
     path('create_post', endpoints.create_post),
+    path('remove_post', endpoints.remove_post),
     path('send_friend_request', endpoints.send_friend_request),
     path('get_friend_requests', endpoints.get_friend_requests),
     path('reject_friend_request', endpoints.reject_friend_request),

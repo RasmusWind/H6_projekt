@@ -41,7 +41,7 @@ class PostSerializer(ModelSerializer):
 
     class Meta:
         model = models.Post
-        fields = ("text","author","created_date","edited_date","public","comment_amount")
+        fields = ("id","text","author","created_date","edited_date","public","comment_amount")
 
 
 class CreatePostSerializer(ModelSerializer):

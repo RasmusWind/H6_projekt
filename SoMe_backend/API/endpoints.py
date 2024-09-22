@@ -115,6 +115,18 @@ def get_friend_posts(request):
     return Response({"status":"success", "posts":post_serializer.data})
 
 
+@api_view(["POST"])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def remove_post(request):
+    post_id = request.data.get("post_id")
+    post = Post.objects.filter(author__id=request.user.id, pk=post_id).first()
+    if post:
+        post.delete()
+        return Response({"status":"success"}, status=status.HTTP_200_OK)
+    return Response({"status":"error", "message":"post not found"}, status=status.HTTP_404_NOT_FOUND)
+
+
 @api_view(["GET"])
 @authentication_classes([SessionAuthentication])
 @permission_classes([IsAuthenticated])

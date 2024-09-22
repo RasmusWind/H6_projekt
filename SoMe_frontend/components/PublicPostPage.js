@@ -26,6 +26,7 @@ export default function PublicPostPage() {
   }, []);
 
   function getScrollPosition(event) {
+    console.log(event.nativeEvent.contentOffset.y);
     const y = event.nativeEvent.contentOffset.y;
     setScrollPosition(y);
   }
@@ -65,7 +66,7 @@ export default function PublicPostPage() {
           <Text>New posts: {dataContext.publicPostUpdatedAmount}</Text>
         ) : null}
         {posts.map((post, index) => (
-          <Post key={index} data={post} />
+          <Post key={index} data={post} allposts={posts} setPosts={setPosts} />
         ))}
       </View>
     </ScrollView>
