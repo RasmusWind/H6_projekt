@@ -1,0 +1,43 @@
+POST http://127.0.0.1:8000/sessionLogin
+Content-Type: application/json
+
+{"username":"raller", "password":"Pass1234!"}
+
+###
+
+POST http://127.0.0.1:8000/signup
+Content-Type: application/json
+
+{"username":"raller", "password":"Pass1234!"}
+
+###
+
+GET http://127.0.0.1:8000/search_users?searchTerm=raller
+Content-Type: application/json
+
+{}
+
+###
+
+POST http://127.0.0.1:8000/update_profile
+Content-Type: application/json
+Authorization: Token d58df749013a391c383a694aafe8f052ffd6af72
+
+{"first_name":"raller", "last_name":"Thomsen", "email": "raller@thomsen.dk"}
+
+###
+
+GET http://127.0.0.1:8000/sessionGetUser
+Content-Type: application/json
+
+{}
+
+###
+
+GET http://127.0.0.1:8000/tokenGetUser
+Content-Type: application/json
+Authorization: Token d58df749013a391c383a694aafe8f052ffd6af72
+
+{}
+
+###
