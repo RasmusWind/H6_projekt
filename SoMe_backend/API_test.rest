@@ -23,7 +23,7 @@ POST http://127.0.0.1:8000/update_profile
 Content-Type: application/json
 Authorization: Token d58df749013a391c383a694aafe8f052ffd6af72
 
-{"first_name":"raller", "last_name":"Thomsen", "email": "raller@thomsen.dk"}
+{"first_name":"raller", "last_name":"Larsen", "email": "raller@thomsen.dk"}
 
 ###
 

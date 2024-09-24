@@ -46,7 +46,7 @@ def create_user(request):
         user.save()
         user_serializer = UserSerializer(instance=user)
         token = Token.objects.create(user=user)
-        return Response({"user":user_serializer.data, "token": token.key})
+        return Response({"status":"success", "user":user_serializer.data, "token": token.key})
     return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
