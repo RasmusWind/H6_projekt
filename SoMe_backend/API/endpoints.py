@@ -17,6 +17,12 @@ from rest_framework.authtoken.models import Token
 import json
 from django.db.models import Exists, OuterRef, Q
 from django.db.models.functions import Coalesce
+import time
+from confluent_kafka import Producer
+
+producer = Producer(
+    {'bootstrap.servers': '87.104.251.99'}
+)
 
 # Dette skal stå før hver api endpoint for sessionauth
 #@swagger_auto_schema(
@@ -50,19 +56,16 @@ def create_user(request):
     return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# @authentication_classes([SessionAuthentication, TokenAuthentication])
-# @permission_classes([IsAuthenticated])
 @api_view(["GET"])
 @authentication_classes([SessionAuthentication])
 @permission_classes([IsAuthenticated])
 def search_users(request):
     try:
-
         searchTerm = request.query_params.get("searchTerm")
-        print(searchTerm)
+
         if not searchTerm:
             return Response({"status": "success", "users":UserSerializer([], many=True).data})
-        print("still here")
+        
         users = User.objects.filter(
             Q(first_name__contains=searchTerm)|
             Q(first_name__icontains=searchTerm)|
@@ -76,10 +79,8 @@ def search_users(request):
             has_pending_friend_request=Exists(FriendshipRequest.objects.filter(from_user=request.user, to_user_id=OuterRef('pk'))),
             is_friend=Exists(Friendship.objects.filter(Q(A=request.user, B_id=OuterRef('pk'))|Q(A_id=OuterRef('pk'), B=request.user)))
         ).exclude(id=request.user.id)
-        print("users:",users)
 
         user_serializer = UserSerializer(users, many=True)
-        print(user_serializer.data)
         return Response({"status": "success", "users":user_serializer.data})
     except Exception as e:
         print(e)
@@ -228,6 +229,8 @@ def create_post(request):
 
     if post_serializer.is_valid():
         post_serializer.save()
+        producer.produce("POST", json.dumps(post_serializer.data), str(int(time.time())))
+        producer.flush()
         return Response({"status":"success", "post": post_serializer.data}, status=status.HTTP_200_OK)
     print(post_serializer.errors)
     return Response({"status": "error", "message": post_serializer.error_messages}, status=status.HTTP_400_BAD_REQUEST)
